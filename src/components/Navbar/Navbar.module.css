@@ -6,6 +6,8 @@ body {margin: 0;}
     background: #ffe600;
     width: 100vw;
     height: 8vw;
+    max-height: 100px;
+    min-height: 87px;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -17,7 +19,7 @@ body {margin: 0;}
     height: 85%;
     display: grid;
     align-content: center;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 2fr;
     grid-template-rows: 2fr 1fr;
     grid-column-gap: 15px;
     grid-row-gap: 5px;
@@ -30,7 +32,7 @@ body {margin: 0;}
 .menu{
     display: none;
     grid-area: menu;
-    height: 100%;
+    place-content: center;
 }
 
 .menuInput{
@@ -38,21 +40,10 @@ body {margin: 0;}
 }
 .activeMenu {
     display: none;
+    
 }
 .activeMenu > svg{
-    height: 70%;
     width: 70%;
-}
-
-.closedMenu {
-    display: none;
-    justify-self: end;
-}
-
-.closedMenu > svg{
-    height: 100%;
-    width: 100%;
-
 }
 
 .itemsMenu{
@@ -66,7 +57,7 @@ body {margin: 0;}
     right: 0;
     bottom: 0;
     width: 70%;
-    height: 100vw;
+    height: 30vw;
     justify-items: center;
     border-radius: 15px;
 }
@@ -81,19 +72,34 @@ body {margin: 0;}
 
 /* ------------------------------------------------- */
 .logo {
-    background: white;
     grid-area: logo;
+    width: 100%;
+    height: auto;
+    display: block;
+    place-self: center;
 }
+.logoSmall {
+    display: none;
+}
+
 
 .search {
     background: red;
     grid-area: search;
 }
 
+
 .advertising {
-    background: green;
     grid-area: advertising;
+    align-content:center ;
 }
+.advertising > img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
 
 .location {
     background: blue;
@@ -114,25 +120,28 @@ body {margin: 0;}
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
+        .header {background:#fff159;}
         .menu {display: block;}
         .activeMenu {
-            display: block;
+            display: flex;
             cursor: pointer;
-            justify-items: center;
-            align-items: center;
+            place-content: center;
+        }
+        .location {
+            grid-column-start: span 5;
         }
         .container {
-            width: 90vw;
+            width: 98vw;
             height: 80%;
-            grid-template-columns: 3fr 6fr 1fr;
-            grid-template-rows: 1fr;
-            grid-template-areas: "logo search menu";
-            
+            grid-template-columns: 1fr 4fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-column-gap: 3px;
+            grid-template-areas: 
+                "logo search menu login"
+                "location location location location";
         }
         .advertising, 
-        .location, 
-        .buttons,
-        .login {
+        .buttons {
             display: none;
         }
         
@@ -143,11 +152,17 @@ body {margin: 0;}
         .menuInput:checked ~ .itemsMenu {
             display: block;
         }
-        .menuInput:checked ~ .closedMenu {
-            display: block;
-            width:10%;
-        }
 
+
+        .logo {
+            display: none;
+        }
+        .logoSmall {
+            grid-area: logo;
+            height: 70%;
+            display: block;
+            place-self: center;
+        }
 
 }
 /* --------------------------------- */
