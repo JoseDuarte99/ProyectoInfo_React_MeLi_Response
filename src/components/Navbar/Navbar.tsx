@@ -1,21 +1,41 @@
-import { useState } from "react";
+// Import Style
 import style from "./Navbar.module.css"
 
-import imgLogo from "../../assets/LogoMeLi.svg"
-import imgLogoSmall from "../../assets/LogoMeLi-Small.png"
+// Import React
+import { useContext, useState } from "react";
+
+// Import Content
+import Search from "../Search/Search";
+import SearchContext from "../../context/SearchContext";
+
+// Import IMG
+import imgLogo from "../../assets/LogoMeLi.svg";
+import imgLogoSmall from "../../assets/LogoMeLi-Small.png";
 import imgShippingFree from "../../assets/EnvioGratis.webp";
+import imgSearch from "../../assets/lupa.svg";
+
+
 
 
 function Navbar() {
 
+    // Dropdown Menu Status
     const [menuValue, setMenuValue] = useState(false); 
+
+    // Search Context 
+    const search = useContext(SearchContext);
+    if (!search){
+        throw new Error('useCart must be used within a CartProvider');
+    }
+    const {onSearch, setOnSearch} = search;
+
 
     return (
         <header className={style.header}>
             <div className={style.container}>
                 <img src={imgLogo} alt="Logo" className={style.logo}/>
                 <img src={imgLogoSmall} alt="Logo" className={style.logoSmall} />
-                <div className={style.search}>Search</div>
+                <Search className={style.search} onSearch={onSearch} setOnSearch={setOnSearch} placeholder="Buscar products, marcas y más…" imgSearch= {imgSearch}/>
                 <div className={style.advertising}>
                     <img src={imgShippingFree} alt="Logo de Mercado Libre"  />
                 </div>
@@ -44,7 +64,6 @@ function Navbar() {
                     </ul>
                 </nav>
             </div>
-
 
         </header>
     )

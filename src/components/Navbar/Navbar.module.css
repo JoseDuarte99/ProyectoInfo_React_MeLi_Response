@@ -42,9 +42,9 @@ body {margin: 0;}
     display: none;
     
 }
-.activeMenu > svg{
-    width: 70%;
-}
+/* .activeMenu > svg{
+    
+} */
 
 .itemsMenu{
     display: none;
@@ -82,12 +82,16 @@ body {margin: 0;}
     display: none;
 }
 
-
 .search {
-    background: red;
     grid-area: search;
+    align-self: center;
+    justify-self: start;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    border: 1px solid #555;
+    
 }
-
 
 .advertising {
     grid-area: advertising;
@@ -126,6 +130,7 @@ body {margin: 0;}
             display: flex;
             cursor: pointer;
             place-content: center;
+            height: 80%;
         }
         .location {
             grid-column-start: span 5;
@@ -159,7 +164,7 @@ body {margin: 0;}
         }
         .logoSmall {
             grid-area: logo;
-            height: 70%;
+            height: 50%;
             display: block;
             place-self: center;
         }
