@@ -17,7 +17,6 @@ function Search(props: SearchProps){
 
     return(
         <div className={className}>
-        {/* <div className="h-[2.5rem] w-[36.75rem] flex items-center bg-white shadow-gray-400 shadow-sm"> */}
             <input 
                 value={onSearch}
                 onChange={searching}
@@ -25,12 +24,9 @@ function Search(props: SearchProps){
                 type="search" 
                 placeholder={ placeholder }
             />
-            <button className={style.buttonSearch}>
+            <button type="submit" className={style.buttonSearch}>
                 <img src={imgSearch} alt="Lupa" />
             </button>
-            {/* <button type="submit" className="cursor-pointer !bg-white rounded-none p-0">
-                <img className="h-[1.5rem] mt-2 mb-2 pl-3 pr-4 pb-1 border-l-1 border-l-gray-300" src={imgSearch} alt="Lupa" />
-            </button> */}
         </div>
     );
 }

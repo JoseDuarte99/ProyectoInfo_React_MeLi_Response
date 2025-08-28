@@ -32,7 +32,6 @@ body {margin: 0;}
 .menu{
     display: none;
     grid-area: menu;
-    place-content: center;
 }
 
 .menuInput{
@@ -40,11 +39,8 @@ body {margin: 0;}
 }
 .activeMenu {
     display: none;
-    
 }
-/* .activeMenu > svg{
-    
-} */
+
 
 .itemsMenu{
     display: none;
@@ -86,11 +82,13 @@ body {margin: 0;}
     grid-area: search;
     align-self: center;
     justify-self: start;
+    place-items: center;
     width: 100%;
-    height: 50%;
+    height: 80%;
     display: flex;
-    border: 1px solid #555;
-    
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    border-radius: 2px;
 }
 
 .advertising {
@@ -101,9 +99,7 @@ body {margin: 0;}
     width: 100%;
     height: auto;
     display: block;
-
 }
-
 
 .location {
     background: blue;
@@ -125,12 +121,18 @@ body {margin: 0;}
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
         .header {background:#fff159;}
-        .menu {display: block;}
+        .menu {
+            display: block;
+        }
         .activeMenu {
-            display: flex;
+            display: block;
             cursor: pointer;
-            place-content: center;
-            height: 80%;
+            align-content: center;
+            justify-self: center;
+            height: 100%;
+        }
+        .activeMenu > svg{
+            height: 80%;    
         }
         .location {
             grid-column-start: span 5;
@@ -169,6 +171,10 @@ body {margin: 0;}
             place-self: center;
         }
 
+        .search {
+            flex-direction: row-reverse;
+            height: 60%;
+        }
 }
 /* --------------------------------- */
 
