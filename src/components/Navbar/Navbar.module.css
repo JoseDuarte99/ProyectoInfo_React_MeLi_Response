@@ -11,7 +11,7 @@ body {margin: 0;}
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    align-items: center;     
+    align-items: center;
 }
 
 .container{
@@ -40,7 +40,6 @@ body {margin: 0;}
 .activeMenu {
     display: none;
 }
-
 
 .itemsMenu{
     display: none;
@@ -91,6 +90,11 @@ body {margin: 0;}
     border-radius: 2px;
 }
 
+.cart{
+    display: none;
+    grid-area: cart;
+}
+
 .advertising {
     grid-area: advertising;
     align-content:center ;
@@ -120,19 +124,24 @@ body {margin: 0;}
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
-        .header {background:#fff159;}
+        .header {
+            background:#fff159;
+            margin-top: -9px;
+        }
         .menu {
-            display: block;
+            display: flex;
+            justify-content: center;
         }
         .activeMenu {
-            display: block;
+            display: flex;
             cursor: pointer;
-            align-content: center;
-            justify-self: center;
-            height: 100%;
+            height: 80%;
+            align-self: center;
+            justify-content: center;
         }
         .activeMenu > svg{
-            height: 80%;    
+            height: 80%;
+            align-self: center;    
         }
         .location {
             grid-column-start: span 5;
@@ -140,15 +149,16 @@ body {margin: 0;}
         .container {
             width: 98vw;
             height: 80%;
-            grid-template-columns: 1fr 4fr 1fr 1fr;
+            grid-template-columns: 1fr 7fr 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             grid-column-gap: 3px;
             grid-template-areas: 
-                "logo search menu login"
+                "logo search menu cart"
                 "location location location location";
         }
         .advertising, 
-        .buttons {
+        .buttons,
+        .login {
             display: none;
         }
         
@@ -159,7 +169,6 @@ body {margin: 0;}
         .menuInput:checked ~ .itemsMenu {
             display: block;
         }
-
 
         .logo {
             display: none;
@@ -175,6 +184,16 @@ body {margin: 0;}
             flex-direction: row-reverse;
             height: 60%;
         }
+
+        .cart{
+            display: block;
+           
+        }
+
+        .cart > svg {
+            height: 100%;
+        }
+
 }
 /* --------------------------------- */
 

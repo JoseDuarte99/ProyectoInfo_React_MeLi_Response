@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 
 // Import Content
 import Search from "../Search/Search";
+import CartIcon from "../Carrito/CartIcon";
 import SearchContext from "../../context/SearchContext";
 
 // Import IMG
@@ -13,7 +14,6 @@ import imgLogo from "../../assets/LogoMeLi.svg";
 import imgLogoSmall from "../../assets/LogoMeLi-Small.png";
 import imgShippingFree from "../../assets/EnvioGratis.webp";
 import imgSearch from "../../assets/lupa.svg";
-
 
 
 
@@ -41,7 +41,12 @@ function Navbar() {
                 </div>
                 <div className={style.location}>Location</div>
                 <div className={style.buttons}>Buttons</div>
-                <div className={style.login}>Login</div>
+                <ul className={style.login}>
+                    {/* <li><ButtonCustom hrefButton="#" textButton="Creá tu cuenta" className=" text-sm"/></li>
+                    <li><ButtonCustom hrefButton="#" textButton="Ingresá" className=" text-sm"/></li>
+                    <li><ButtonCustom hrefButton="#" textButton="Mis compras" className=" text-sm"/></li> */}
+                </ul>
+                <CartIcon quantity={0} className={style.cart}/>
 
                 <nav className={style.menu}>
                     <input type="checkbox" id="menu" checked={menuValue} className={style.menuInput} onChange={() => setMenuValue(!menuValue)} />   

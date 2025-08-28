@@ -6,8 +6,6 @@ import type { SearchProps } from "../../types/SearchType";
 
 
 
-
-
 function Search(props: SearchProps){
     const { placeholder, imgSearch, onSearch, setOnSearch, className} = props
 
