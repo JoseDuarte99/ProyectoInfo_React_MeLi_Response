@@ -7,13 +7,16 @@ import { useContext, useState } from "react";
 // Import Content
 import Search from "../Search/Search";
 import CartIcon from "../Carrito/CartIcon";
+import CustomButton from "../CustomButton/CustomButton";
 import SearchContext from "../../context/SearchContext";
+
 
 // Import IMG
 import imgLogo from "../../assets/LogoMeLi.svg";
 import imgLogoSmall from "../../assets/LogoMeLi-Small.png";
 import imgShippingFree from "../../assets/EnvioGratis.webp";
 import imgSearch from "../../assets/lupa.svg";
+import imglocation from "../../assets/location.svg";
 
 
 
@@ -39,13 +42,28 @@ function Navbar() {
                 <div className={style.advertising}>
                     <img src={imgShippingFree} alt="Logo de Mercado Libre"  />
                 </div>
-                <div className={style.location}>Location</div>
-                <div className={style.buttons}>Buttons</div>
-                <ul className={style.login}>
-                    {/* <li><ButtonCustom hrefButton="#" textButton="Creá tu cuenta" className=" text-sm"/></li>
-                    <li><ButtonCustom hrefButton="#" textButton="Ingresá" className=" text-sm"/></li>
-                    <li><ButtonCustom hrefButton="#" textButton="Mis compras" className=" text-sm"/></li> */}
+                <div className={style.location}>
+                    <img src={imglocation} alt="Ubicacion" />
+                    <div className="flex flex-col -space-y-1.5 pt-[0.2rem]">
+                        <span className="text-xs text-gray-600 ">Enviar a</span>
+                        <CustomButton hrefButton="#" textButton="Barranqueras"/>
+                    </div>
+                </div>
+                <ul className={style.button}>
+                    <CustomButton hrefButton="#" textButton="Categorías"/>
+                    <CustomButton hrefButton="#" textButton="Ofertas"/>
+                    <CustomButton hrefButton="#" textButton="Cupones"/>
+                    <CustomButton hrefButton="#" textButton="Supermercado"/>
+                    <CustomButton hrefButton="#" textButton="Moda"/>
+                    <CustomButton hrefButton="#" textButton="Mercado Play"/>
+                    <CustomButton hrefButton="#" textButton="Vender"/>
+                    <CustomButton hrefButton="#" textButton="Ayuda"/>
                 </ul>
+                <ul className={style.login}>
+                    <CustomButton hrefButton="#" textButton="Creá tu cuenta"/>
+                    <CustomButton hrefButton="#" textButton="Ingresá"/>
+                    <CustomButton hrefButton="#" textButton="Mis compras"/>
+                </ul>                   
                 <CartIcon quantity={0} className={style.cart}/>
 
                 <nav className={style.menu}>

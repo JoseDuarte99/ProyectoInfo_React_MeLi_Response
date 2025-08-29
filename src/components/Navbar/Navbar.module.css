@@ -19,13 +19,13 @@ body {margin: 0;}
     height: 85%;
     display: grid;
     align-content: center;
-    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-columns: 1fr 3fr 2fr 1fr;
     grid-template-rows: 2fr 1fr;
     grid-column-gap: 15px;
     grid-row-gap: 5px;
     grid-template-areas: 
-        "logo search advertising"
-        " location buttons login";
+        "logo search advertising advertising"
+        " location buttons login cart";
 }
 
 /* ----------------------- MENU -------------------------- */
@@ -91,8 +91,14 @@ body {margin: 0;}
 }
 
 .cart{
-    display: none;
-    grid-area: cart;
+    display: flex;
+    justify-content: center;
+    height: 60%;
+}
+
+.cart > svg {
+    height: 100%;
+    align-self: center;
 }
 
 .advertising {
@@ -106,20 +112,53 @@ body {margin: 0;}
 }
 
 .location {
-    background: blue;
     grid-area: location;
+    list-style: none;
+    display: flex;
 }
 
-.buttons {
-    background: yellow;
+.location > img {
+    height: 30%;
+}
+
+.button { 
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    width: 100%;
     grid-area: buttons;
+    color: black;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.login {
-    background: black;
+.button > li {
+    align-self: center;
+    justify-self: center;
+    margin: 0;
+    padding: 0;
+}
+
+.login{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    width: 100%;
     grid-area: login;
-
+    color: black;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+.login > li {
+    align-self: center;
+    justify-self: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+
 /* ------------------------------------------------- */
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
@@ -186,12 +225,13 @@ body {margin: 0;}
         }
 
         .cart{
-            display: block;
-           
+            display: flex;
+            justify-content: center;
         }
 
         .cart > svg {
-            height: 100%;
+            height: 80%;
+            align-self: center;
         }
 
 }
