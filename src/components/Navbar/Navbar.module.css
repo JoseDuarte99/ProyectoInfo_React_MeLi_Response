@@ -1,31 +1,32 @@
-html {margin: 0;}
-body {margin: 0;}
+html {margin: 0; padding: 0;}
+body {margin: 0; padding: 0;}
 
 .header {
     position: relative;
     background: #ffe600;
     width: 100vw;
-    height: 8vw;
+    height: 5vw;
     max-height: 100px;
     min-height: 87px;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
+    padding: 8px 0px;
 }
 
 .container{
     width: 90vw;
-    height: 85%;
+    height: 100%;
     display: grid;
     align-content: center;
-    grid-template-columns: 1fr 3fr 2fr 1fr;
+    grid-template-columns: 1fr 4fr 2fr;
     grid-template-rows: 2fr 1fr;
-    grid-column-gap: 15px;
-    grid-row-gap: 5px;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
     grid-template-areas: 
-        "logo search advertising advertising"
-        " location buttons login cart";
+        "logo search advertising "
+        " location buttons login";
 }
 
 /* ----------------------- MENU -------------------------- */
@@ -59,16 +60,15 @@ body {margin: 0;}
 
 .itemsMenu > li a {
     text-decoration: none;
-    color: black;
+    color: #202020;
 
 }
-
 /* ------------------------------------------------- */
 
-/* ------------------------------------------------- */
+/* Logo --------------------------------- */
 .logo {
     grid-area: logo;
-    width: 100%;
+    width: 80%;
     height: auto;
     display: block;
     place-self: center;
@@ -77,33 +77,25 @@ body {margin: 0;}
     display: none;
 }
 
+/* Search --------------------------------- */
 .search {
     grid-area: search;
     align-self: center;
     justify-self: start;
     place-items: center;
-    width: 100%;
-    height: 80%;
+    width: 90%;
+    height: 100%;
     display: flex;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     background: #fff;
     border-radius: 2px;
 }
 
-.cart{
-    display: flex;
-    justify-content: center;
-    height: 60%;
-}
-
-.cart > svg {
-    height: 100%;
-    align-self: center;
-}
-
+/* Advertising --------------------------------- */
 .advertising {
     grid-area: advertising;
-    align-content:center ;
+    align-content:center;
+    justify-items: end;
 }
 .advertising > img {
     width: 100%;
@@ -111,55 +103,94 @@ body {margin: 0;}
     display: block;
 }
 
+/* Location --------------------------------- */
 .location {
     grid-area: location;
     list-style: none;
     display: flex;
+    height: fit-content;
+    font-size: 0.85rem;
+    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+    color: #202020;
+}
+
+.location > a{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .location > img {
     height: 30%;
 }
 
+/* Button --------------------------------- */
 .button { 
     display: grid;
-    grid-template-columns: repeat(8, 1fr); 
-    width: 100%;
     grid-area: buttons;
-    color: black;
+    grid-template-columns: repeat(8, 1fr); 
+    width: 90%;
     list-style: none;
     margin: 0;
     padding: 0;
+    font-size: 0.85rem;
+    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
 }
 
 .button > li {
-    align-self: center;
+    align-self: end;
     justify-self: center;
     margin: 0;
     padding: 0;
 }
 
-.login{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    width: 100%;
+.button > li > a{
+    text-decoration: none;
+    color: #202020;
+}
+
+/* Login --------------------------------- */
+.login {
+    display: flex;
     grid-area: login;
-    color: black;
+    padding-left: 20px;
+    font-size: 0.85rem;
+    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+}
+
+.login > ul{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr; 
+    grid-column-gap: 10px;
+    width: 100%;
+    height: fit-content;
     list-style: none;
     margin: 0;
     padding: 0;
+    align-self: end;
+    
 }
 
-.login > li {
-    align-self: center;
+.login > ul > li {
     justify-self: center;
     margin: 0;
     padding: 0;
 }
 
+.login > ul > li > a{
+    text-decoration: none;
+    color: #202020;
+}
+/* Cart --------------------------------- */
+.cart{
+    display: block;
+}
 
-
-/* ------------------------------------------------- */
+.cart > svg {
+    height: 100%;
+}
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
@@ -235,7 +266,7 @@ body {margin: 0;}
         }
 
 }
-/* --------------------------------- */
+/* ------------------------------------------------- */
 
 
 

@@ -7,7 +7,6 @@ import { useContext, useState } from "react";
 // Import Content
 import Search from "../Search/Search";
 import CartIcon from "../Carrito/CartIcon";
-import CustomButton from "../CustomButton/CustomButton";
 import SearchContext from "../../context/SearchContext";
 
 
@@ -44,27 +43,30 @@ function Navbar() {
                 </div>
                 <div className={style.location}>
                     <img src={imglocation} alt="Ubicacion" />
-                    <div className="flex flex-col -space-y-1.5 pt-[0.2rem]">
-                        <span className="text-xs text-gray-600 ">Enviar a</span>
-                        <CustomButton hrefButton="#" textButton="Barranqueras"/>
-                    </div>
+                    <a>
+                        <span>Enviar a</span>
+                        <span>Barrranqueras</span>
+                    </a> 
                 </div>
                 <ul className={style.button}>
-                    <CustomButton hrefButton="#" textButton="Categorías"/>
-                    <CustomButton hrefButton="#" textButton="Ofertas"/>
-                    <CustomButton hrefButton="#" textButton="Cupones"/>
-                    <CustomButton hrefButton="#" textButton="Supermercado"/>
-                    <CustomButton hrefButton="#" textButton="Moda"/>
-                    <CustomButton hrefButton="#" textButton="Mercado Play"/>
-                    <CustomButton hrefButton="#" textButton="Vender"/>
-                    <CustomButton hrefButton="#" textButton="Ayuda"/>
+                    <li> <a href="">Categorías</a> </li>
+                    <li> <a href="">Ofertas</a> </li>
+                    <li> <a href="">Cupones</a> </li>
+                    <li> <a href="">Supermercado</a> </li>
+                    <li> <a href="">Moda</a> </li>
+                    <li> <a href="">Mercado Play</a> </li>
+                    <li> <a href="">Vender</a> </li>
+                    <li> <a href="">Ayuda</a> </li>
                 </ul>
-                <ul className={style.login}>
-                    <CustomButton hrefButton="#" textButton="Creá tu cuenta"/>
-                    <CustomButton hrefButton="#" textButton="Ingresá"/>
-                    <CustomButton hrefButton="#" textButton="Mis compras"/>
-                </ul>                   
-                <CartIcon quantity={0} className={style.cart}/>
+                <div className={style.login}>
+                    <ul>
+                        <li> <a href="">Creá tu cuenta</a> </li>
+                        <li> <a href="">Ingresá</a> </li> 
+                        <li> <a href="">Mis compras</a> </li> 
+                    </ul>
+                    <CartIcon quantity={0} className={style.cart}/>
+                </div>                   
+                
 
                 <nav className={style.menu}>
                     <input type="checkbox" id="menu" checked={menuValue} className={style.menuInput} onChange={() => setMenuValue(!menuValue)} />   
