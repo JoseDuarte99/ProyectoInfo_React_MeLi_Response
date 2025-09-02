@@ -38,9 +38,7 @@ function Navbar() {
                 <img src={imgLogo} alt="Logo" className={style.logo}/>
                 <img src={imgLogoSmall} alt="Logo" className={style.logoSmall} />
                 <Search className={style.search} onSearch={onSearch} setOnSearch={setOnSearch} placeholder="Buscar products, marcas y más…" imgSearch= {imgSearch}/>
-                <div className={style.advertising}>
-                    <img src={imgShippingFree} alt="Logo de Mercado Libre"  />
-                </div>
+                <img src={imgShippingFree} alt="Logo de Mercado Libre" className={style.advertising} />
                 <div className={style.location}>
                     <img src={imglocation} alt="Ubicacion" />
                     <a>
@@ -49,12 +47,21 @@ function Navbar() {
                     </a> 
                 </div>
                 <ul className={style.button}>
-                    <li> <a href="">Categorías</a> </li>
+                    <li> <a href="">Categorías</a>                 
+                        <span>
+                            <svg viewBox="0 0 20 20">
+                                <polyline points="5,7 10,13 15,7" fill="none" stroke="black" strokeWidth="1" />
+                            </svg>
+                        </span>
+                    </li>
                     <li> <a href="">Ofertas</a> </li>
                     <li> <a href="">Cupones</a> </li>
                     <li> <a href="">Supermercado</a> </li>
                     <li> <a href="">Moda</a> </li>
-                    <li> <a href="">Mercado Play</a> </li>
+                    <li className={style.buttonMercadoPlay}>
+                        <span>GRATIS</span>
+                        <a href="">Mercado Play</a> 
+                    </li>
                     <li> <a href="">Vender</a> </li>
                     <li> <a href="">Ayuda</a> </li>
                 </ul>

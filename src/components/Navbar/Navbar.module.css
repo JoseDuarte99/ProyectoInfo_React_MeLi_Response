@@ -12,7 +12,7 @@ body {margin: 0; padding: 0;}
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    padding: 8px 0px;
+    padding: 0.5rem 0 0.75rem 0;
 }
 
 .container{
@@ -20,7 +20,7 @@ body {margin: 0; padding: 0;}
     height: 100%;
     display: grid;
     align-content: center;
-    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-columns: 1fr 5fr 3fr;
     grid-template-rows: 2fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 10px;
@@ -68,10 +68,11 @@ body {margin: 0; padding: 0;}
 /* Logo --------------------------------- */
 .logo {
     grid-area: logo;
-    width: 80%;
+    width: 100%;
     height: auto;
     display: block;
-    place-self: center;
+    justify-self: start;
+    align-self: center;
 }
 .logoSmall {
     display: none;
@@ -83,8 +84,8 @@ body {margin: 0; padding: 0;}
     align-self: center;
     justify-self: start;
     place-items: center;
-    width: 90%;
-    height: 100%;
+    width: 100%;
+    height: 90%;
     display: flex;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     background: #fff;
@@ -94,11 +95,9 @@ body {margin: 0; padding: 0;}
 /* Advertising --------------------------------- */
 .advertising {
     grid-area: advertising;
-    align-content:center;
-    justify-items: end;
-}
-.advertising > img {
-    width: 100%;
+    align-self:center;
+    justify-self: end;
+    width: 90%;
     height: auto;
     display: block;
 }
@@ -122,6 +121,11 @@ body {margin: 0; padding: 0;}
     list-style: none;
 }
 
+.location > a > span:first-of-type {
+    color: #5f5f5f;
+    font-size: 0.75rem;
+}
+
 .location > img {
     height: 30%;
 }
@@ -130,13 +134,18 @@ body {margin: 0; padding: 0;}
 .button { 
     display: grid;
     grid-area: buttons;
-    grid-template-columns: repeat(8, 1fr); 
-    width: 90%;
+    grid-auto-flow: column;
+    grid-template-columns: auto; 
+    grid-column-gap: 15px;
+    width: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 0.85rem;
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+    overflow-x: auto;
+    overflow-y: hidden;
+
 }
 
 .button > li {
@@ -144,6 +153,18 @@ body {margin: 0; padding: 0;}
     justify-self: center;
     margin: 0;
     padding: 0;
+    min-width: max-content;
+    
+}
+
+.button > li:first-child {
+    display: flex;
+}
+.button > li:first-child > span {
+    cursor: pointer;
+    padding-left: 5px;
+    height: 15px;
+    width: 15px;
 }
 
 .button > li > a{
@@ -151,26 +172,46 @@ body {margin: 0; padding: 0;}
     color: #202020;
 }
 
+/* Button Mercado Play ------------------ */
+.buttonMercadoPlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: max-content;
+}
+
+.buttonMercadoPlay > span {
+    background: #00a650;
+    color: white;
+    font-size: 0.5rem ;
+    padding: 0.1rem 0.2rem 0.05rem 0.1rem;
+    border-radius: 15px;
+    width: fit-content;
+
+}
+
+
 /* Login --------------------------------- */
 .login {
     display: flex;
     grid-area: login;
-    padding-left: 20px;
     font-size: 0.85rem;
-    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+    font-family: "Proxima Nova", Arial, sans-serif, sans-serif;
+    width: 100%;
+    justify-content: end;
 }
 
 .login > ul{
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr; 
-    grid-column-gap: 10px;
-    width: 100%;
+    grid-auto-flow: column;
+    grid-template-columns: auto; 
+    grid-column-gap: 15px;
+    min-width: max-content;
     height: fit-content;
     list-style: none;
     margin: 0;
     padding: 0;
     align-self: end;
-    
 }
 
 .login > ul > li {
@@ -183,6 +224,7 @@ body {margin: 0; padding: 0;}
     text-decoration: none;
     color: #202020;
 }
+
 /* Cart --------------------------------- */
 .cart{
     display: block;
@@ -190,13 +232,14 @@ body {margin: 0; padding: 0;}
 
 .cart > svg {
     height: 100%;
+
 }
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
         .header {
             background:#fff159;
-            margin-top: -9px;
+            padding: 0;
         }
         .menu {
             display: flex;
@@ -213,25 +256,23 @@ body {margin: 0; padding: 0;}
             height: 80%;
             align-self: center;    
         }
-        .location {
-            grid-column-start: span 5;
-        }
+
         .container {
             width: 98vw;
-            height: 80%;
+            height: 100%;
             grid-template-columns: 1fr 7fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-column-gap: 3px;
+            grid-template-rows: 2fr 1fr;
+            grid-column-gap: 10px;
+            grid-row-gap: 0;
             grid-template-areas: 
                 "logo search menu cart"
                 "location location location location";
         }
+
         .advertising, 
-        .buttons,
-        .login {
-            display: none;
-        }
-        
+        .button,
+        .login,
+        .logo,
         .itemsMenu {
             display: none;
         }
@@ -240,9 +281,6 @@ body {margin: 0; padding: 0;}
             display: block;
         }
 
-        .logo {
-            display: none;
-        }
         .logoSmall {
             grid-area: logo;
             height: 50%;
@@ -253,16 +291,24 @@ body {margin: 0; padding: 0;}
         .search {
             flex-direction: row-reverse;
             height: 60%;
+            
+        }
+        .search > input::placeholder{
+            color: #aaa;
         }
 
-        .cart{
-            display: flex;
-            justify-content: center;
+        .location{
+            grid-column-start: span 5;
+            border-top: 1px solid #0002;
+        }
+        .location > a{
+            flex-direction: row;
+            text-indent: 5px;
+            align-items: end;
         }
 
-        .cart > svg {
-            height: 80%;
-            align-self: center;
+        .location > img {
+            height: 1.3em;
         }
 
 }
