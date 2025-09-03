@@ -43,8 +43,13 @@ function Navbar() {
                     <img src={imglocation} alt="Ubicacion" />
                     <a>
                         <span>Enviar a</span>
-                        <span>Barrranqueras</span>
+                        <span>Barranqueras</span>
                     </a> 
+                    <span>
+                        <svg viewBox="0 0 20 20">
+                            <polyline points="7,5 13,10 7,15" fill="none" stroke="black" strokeWidth={1} />
+                        </svg> 
+                    </span>
                 </div>
                 <ul className={style.button}>
                     <li> <a href="">Categorías</a>                 
@@ -71,8 +76,8 @@ function Navbar() {
                         <li> <a href="">Ingresá</a> </li> 
                         <li> <a href="">Mis compras</a> </li> 
                     </ul>
-                    <CartIcon quantity={0} className={style.cart}/>
-                </div>                   
+                </div>  
+                <CartIcon quantity={0} className={style.cart}/>                 
                 
 
                 <nav className={style.menu}>
