@@ -6,7 +6,8 @@ import { useContext, useState } from "react";
 
 // Import Content
 import Search from "../Search/Search";
-import CartIcon from "../Carrito/CartIcon";
+import CartIcon from "../Cart/CartIcon";
+import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import SearchContext from "../../context/SearchContext";
 
 
@@ -74,11 +75,11 @@ function Navbar() {
                     <ul>
                         <li> <a href="">Creá tu cuenta</a> </li>
                         <li> <a href="">Ingresá</a> </li> 
-                        <li> <a href="">Mis compras</a> </li> 
+                        <li> <a href="">Mis compras</a> </li>
                     </ul>
+                    <CartIcon quantity={0} className={style.cart}/>  
                 </div>  
-                <CartIcon quantity={0} className={style.cart}/>                 
-                
+                <CartIcon quantity={0} className={style.cartSmall}/>                 
 
                 <nav className={style.menu}>
                     <input type="checkbox" id="menu" checked={menuValue} className={style.menuInput} onChange={() => setMenuValue(!menuValue)} />   
@@ -91,12 +92,9 @@ function Navbar() {
                                 <path d="M4 6h16v1H4zM4 11h16v1H4zM4 16h16v1H4z" />
                             </svg>}
                     </label>
-                    <ul className={style.itemsMenu}>
-                        <li><a href="#">Advertising</a></li>
-                        <li><a href="#">Location</a></li>
-                        <li><a href="#">Buttons</a></li>
-                        <li><a href="#">Login</a></li>
-                    </ul>
+                    <div className={style.itemsMenu}>
+                        <DropdownMenu />
+                    </div>
                 </nav>
             </div>
 

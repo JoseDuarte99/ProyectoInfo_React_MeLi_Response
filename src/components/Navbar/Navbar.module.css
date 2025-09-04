@@ -33,34 +33,14 @@ body {margin: 0; padding: 0;}
     display: none;
     grid-area: menu;
 }
-
 .menuInput{
     display: none;
 }
 .activeMenu {
     display: none;
 }
-
 .itemsMenu{
     display: none;
-    position: absolute;
-    padding: 15px;
-    margin: 5PX;
-    background: #aaa;
-    list-style: none;
-    top: 100%;
-    right: 0;
-    bottom: 0;
-    width: 70%;
-    height: 30vw;
-    justify-items: center;
-    border-radius: 15px;
-}
-
-.itemsMenu > li a {
-    text-decoration: none;
-    color: #202020;
-
 }
 /* ------------------------------------------------- */
 
@@ -86,7 +66,7 @@ body {margin: 0; padding: 0;}
     width: 100%;
     height: 70%;
     display: flex;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 2px;
 }
@@ -229,7 +209,20 @@ body {margin: 0; padding: 0;}
 }
 
 /* Cart --------------------------------- */
-.cart{}
+.cart{
+    display: block;
+    margin-bottom: -5px;
+}
+
+.cart > svg{
+    height: 100%;
+}
+
+/* CartSmall --------------------------------- */
+.cartSmall{
+    display: none;
+}
+
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
@@ -239,21 +232,21 @@ body {margin: 0; padding: 0;}
         }
 
         .container {
-            width: 98vw;
+            width: 100vw;
             height: 100%;
             grid-template-columns: 1fr 7fr 1fr 1fr;
             grid-template-rows: 2fr 38px;
             grid-column-gap: 10px;
             grid-row-gap: 0;
             grid-template-areas: 
-                "logo search menu cart"
+                "logo search menu cartSmall"
                 "location location location location";
         }
 
         /* Diplay:None PHONE SCREEN VIEW -------------- */
         .advertising, 
         .button,
-        .login > ul,
+        .login,
         .logo,
         .itemsMenu {
             display: none;
@@ -278,7 +271,16 @@ body {margin: 0; padding: 0;}
         }
 
         .menuInput:checked ~ .itemsMenu {
-            display: block;
+            display: flex;
+            position: absolute;
+            background: #aaa;
+            list-style: none;
+            top: 60px;
+            left: 0;
+            width: 100vw;
+            height: 60vh;
+            justify-items: center;
+            align-content: center ;
         }
 
         /* Logo PHONE SCREEN VIEW -------------- */
@@ -311,6 +313,7 @@ body {margin: 0; padding: 0;}
 
         .location > img {
             height: 1.3em;
+            padding-left: 10px;
         }
 
         .location > a {
@@ -323,7 +326,7 @@ body {margin: 0; padding: 0;}
             display: block;
             height: 25px;
             width: 25px;
-            padding-right: 10px;
+            padding-right: 20px;
         }
 
         .location > a > span:first-child{
@@ -336,15 +339,21 @@ body {margin: 0; padding: 0;}
             color: #5f5f5fAA;
         }
 
-        /* Cart PHONE SCREEN VIEW -------------- */
-        .cart{
-            grid-area: cart;
+        /* cartSmall PHONE SCREEN VIEW -------------- */
+        .cartSmall{
+            display: block;
+            grid-area: cartSmall;
             place-content: center;
 
         }
-        .cart > svg {
+        .cartSmall > svg {
             margin: 0 -20px;
-            height: 80%;
+            height: 70%;
+        }
+
+        /* cart PHONE SCREEN VIEW -------------- */
+        .cart {
+            display: none;
         }
 }
 /* ------------------------------------------------- */
