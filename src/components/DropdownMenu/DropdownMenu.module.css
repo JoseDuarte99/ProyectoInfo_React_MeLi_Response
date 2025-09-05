@@ -1,3 +1,4 @@
+/* Profile --------------------------------- */
 .profile {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -5,15 +6,19 @@
     grid-column-gap: 15px;
     background: #fff159;
     width: 100%;
-    height: 35vw;
+    min-height: 125px;
+    padding: 10px 0;
     place-content: center;
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
-    padding: 0 10px;
+    box-shadow: 0px 3px 10px #00000033;
+    z-index: 2;
+    
 }
 
 .profile > img {
     grid-row: span 2;
-    height: 15vw;
+    height: 14vw;
+    max-height: 70px;
     border-radius: 50%;
     justify-self: end;
     align-self: center;
@@ -27,20 +32,23 @@
 
 .profile > p {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #5f5f5fBB;
 }
 
 .buttons{
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
     grid-column: span 2;
     justify-self:center ;
+    width: 100%;
 }
 
 .buttons > button{
     margin: 2px;
     padding: 8px 0;
-    width: 11rem;
+    width: 40%;
     height: 2.5rem;
     border: none;
     border-radius: 5px;
@@ -56,4 +64,76 @@
     background: #fff;
     color: #3484fa;
     border: 1px solid #3484fa;
+}
+/* ----------------------------------------- */
+
+.options{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 100vw;
+    height: auto;
+    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+    font-size: small;
+    font-weight: bold;
+
+}
+
+.options > ul{
+    padding: 16px 0;
+    display: grid;
+    grid-template-rows: auto;
+    margin: 0;
+    padding-left: 30px;
+    list-style: none;
+    height: 30vh;
+    border-bottom: 1px solid #ddd;
+}
+
+.options > ul:nth-child(3){
+    height: 12vh;
+}
+
+.options > ul:last-child{
+    height: 6vh;
+}
+
+.options > ul > li{
+    align-content: center;
+}
+
+.options > ul > li > a{
+    text-decoration: none;
+    color: #000a;
+    padding-left: 1rem ;
+}
+
+.options > ul > li > svg{
+    height: 18px;
+}
+
+
+/* Button Mercado Play ------------------ */
+
+.buttonMercadoPlay{
+    background: #00a650;
+    color: white;
+    font-size: 0.6rem ;
+    padding: 0.2rem 0.3rem 0.1rem 0.2rem;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: 5px;
+}
+
+
+/* Button Best Selling ------------------ */
+
+.buttonBestSelling{
+    background: #3483fa;
+    color: white;
+    font-size: 0.6rem ;
+    padding: 0.2rem 0.3rem 0.1rem 0.2rem;
+    border-radius: 15px;
+    width: fit-content;
+    margin-left: 5px;
 }

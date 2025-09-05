@@ -11,7 +11,7 @@ body {margin: 0; padding: 0;}
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    padding: 0.5rem 0 0.75rem 0;
+    padding: 0.25rem 0 0.5rem 0;
 }
 
 .container{
@@ -170,7 +170,6 @@ body {margin: 0; padding: 0;}
     padding: 0.1rem 0.2rem 0.05rem 0.1rem;
     border-radius: 15px;
     width: fit-content;
-
 }
 
 
@@ -272,13 +271,13 @@ body {margin: 0; padding: 0;}
 
         .menuInput:checked ~ .itemsMenu {
             display: flex;
+            flex-direction: column;
             position: absolute;
-            background: #aaa;
             list-style: none;
-            top: 60px;
+            top: 50px;
             left: 0;
             width: 100vw;
-            height: 60vh;
+            height: 100vh;
             justify-items: center;
             align-content: center ;
         }
@@ -287,6 +286,7 @@ body {margin: 0; padding: 0;}
         .logoSmall {
             grid-area: logo;
             height: 50%;
+            max-height: 29px;
             display: block;
             place-self: center;
         }
@@ -295,6 +295,7 @@ body {margin: 0; padding: 0;}
         .search {
             flex-direction: row-reverse;
             height: 60%;
+            max-height: 34px ;
             
         }
         .search > input::placeholder{
