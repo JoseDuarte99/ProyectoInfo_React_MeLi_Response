@@ -86,16 +86,16 @@
     margin: 0;
     padding-left: 30px;
     list-style: none;
-    height: 30vh;
+    height: 35vh;
     border-bottom: 1px solid #ddd;
 }
 
 .options > ul:nth-child(3){
-    height: 12vh;
+    height: 14vh;
 }
 
 .options > ul:last-child{
-    height: 6vh;
+    height: 7vh;
 }
 
 .options > ul > li{

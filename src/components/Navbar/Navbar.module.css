@@ -11,11 +11,11 @@ body {margin: 0; padding: 0;}
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    padding: 0.25rem 0 0.5rem 0;
+    padding: 0 0 0.75rem 0;
 }
 
 .container{
-    width: 90vw;
+    width: 95vw;
     height: 100%;
     display: grid;
     align-content: center;
@@ -42,12 +42,13 @@ body {margin: 0; padding: 0;}
 .itemsMenu{
     display: none;
 }
-/* ------------------------------------------------- */
+/* ------------------------------------------------------- */
 
 /* Logo --------------------------------- */
 .logo {
     grid-area: logo;
     width: 100%;
+    min-width: 125px;
     height: auto;
     display: block;
     justify-self: start;
@@ -61,9 +62,9 @@ body {margin: 0; padding: 0;}
 .search {
     grid-area: search;
     align-self: center;
-    justify-self: start;
+    justify-self: center;
     place-items: center;
-    width: 100%;
+    width: 95%;
     height: 70%;
     display: flex;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
@@ -77,6 +78,7 @@ body {margin: 0; padding: 0;}
     align-self:center;
     justify-self: end;
     width: 90%;
+    min-width: 325px;
     height: auto;
     display: block;
 }
@@ -110,17 +112,19 @@ body {margin: 0; padding: 0;}
 }
 
 .location > img {
-    height: 30%;
+    height: 25px;
+    margin-top: -5px;
 }
 
 /* Button --------------------------------- */
 .button { 
     display: grid;
+    justify-self: center;
     grid-area: buttons;
     grid-auto-flow: column;
     grid-template-columns: auto; 
     grid-column-gap: 15px;
-    width: 100%;
+    width: 95%;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -128,7 +132,6 @@ body {margin: 0; padding: 0;}
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
     overflow-x: auto;
     overflow-y: hidden;
-
 }
 
 .button > li {
@@ -137,23 +140,30 @@ body {margin: 0; padding: 0;}
     margin: 0;
     padding: 0;
     min-width: max-content;
-    
+    cursor: pointer;
 }
 
 .button > li:first-child {
     display: flex;
+    position: relative;
 }
+
 .button > li:first-child > span {
-    cursor: pointer;
     padding-left: 5px;
     height: 15px;
     width: 15px;
 }
 
-.button > li > a{
+.button > li > a {
     text-decoration: none;
     color: #202020;
 }
+
+.button > li > a:hover {
+    text-decoration: none;
+    color: #202020aa;
+}
+
 
 /* Button Mercado Play ------------------ */
 .buttonMercadoPlay {
@@ -285,7 +295,7 @@ body {margin: 0; padding: 0;}
         /* Logo PHONE SCREEN VIEW -------------- */
         .logoSmall {
             grid-area: logo;
-            height: 50%;
+            height: 60%;
             max-height: 29px;
             display: block;
             place-self: center;
@@ -294,7 +304,7 @@ body {margin: 0; padding: 0;}
         /* Search PHONE SCREEN VIEW -------------- */
         .search {
             flex-direction: row-reverse;
-            height: 60%;
+            height: 65%;
             max-height: 34px ;
             
         }
@@ -340,7 +350,7 @@ body {margin: 0; padding: 0;}
             color: #5f5f5fAA;
         }
 
-        /* cartSmall PHONE SCREEN VIEW -------------- */
+        /* CartSmall PHONE SCREEN VIEW -------------- */
         .cartSmall{
             display: block;
             grid-area: cartSmall;
@@ -352,10 +362,11 @@ body {margin: 0; padding: 0;}
             height: 70%;
         }
 
-        /* cart PHONE SCREEN VIEW -------------- */
+        /* Cart PHONE SCREEN VIEW -------------- */
         .cart {
             display: none;
         }
+
 }
 /* ------------------------------------------------- */
 

@@ -3,7 +3,7 @@ import style from "./DropdownMenu.module.css"
 
 // Import IMG and SVG
 import ProfileNone from "../../../public/SinPerfil.jpg"
-import { HomeSvg, OfferSvg, PlaySvg, HistorySvg, HeadsetSvg, SuperMarketSvg } from "./DropdownMenuIcons"
+import { HomeSvg, OfferSvg, PlaySvg, HistorySvg, HeadsetSvg, SuperMarketSvg, FashionSvg, BestSellingSvg, OfficialStoreSvg, CategoriesSvg, SummarySvg, OnSaleSvg, DownloadSvg } from "./DropdownMenuIcons"
 
 
 function DropdownMenu() {
@@ -28,17 +28,17 @@ function DropdownMenu() {
                 </ul>
                 <ul>
                     <li>{SuperMarketSvg}<a href="">Supermercado</a></li>
-                    <li>{OfferSvg}<a href="">Moda</a></li>
-                    <li>{PlaySvg}<a href="">Mas vendidos</a><span className={style.buttonBestSelling}>NUEVO</span></li>
-                    <li>{HistorySvg}<a href="">Tiendas oficiales</a></li>
-                    <li>{HeadsetSvg}<a href="">Categorías</a></li>
+                    <li>{FashionSvg}<a href="">Moda</a></li>
+                    <li>{BestSellingSvg}<a href="">Mas vendidos</a><span className={style.buttonBestSelling}>NUEVO</span></li>
+                    <li>{OfficialStoreSvg}<a href="">Tiendas oficiales</a></li>
+                    <li>{CategoriesSvg}<a href="">Categorías</a></li>
                 </ul>
                 <ul>
-                    <li>{HistorySvg}<a href="">Resumen</a></li>
-                    <li>{HeadsetSvg}<a href="">Vender</a></li>
+                    <li>{SummarySvg}<a href="">Resumen</a></li>
+                    <li>{OnSaleSvg}<a href="">Vender</a></li>
                 </ul>
                 <ul>
-                    <li>{HeadsetSvg}<a href="">¡Comprá y vendé con la app!</a></li>
+                    <li>{DownloadSvg}<a href="">¡Comprá y vendé con la app!</a></li>
                 </ul>
             </div>
         </>
