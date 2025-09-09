@@ -24,9 +24,6 @@ import imglocation from "../../assets/location.svg";
 
 function Navbar() {
 
-    // Dropdown Categories Status
-    const [categoriesValue, setCategoriesValue] = useState(false); 
-
     // Dropdown Menu Status
     const [menuValue, setMenuValue] = useState(false); 
 
@@ -58,18 +55,16 @@ function Navbar() {
                     </span>
                 </div>
                 <ul className={style.button}>
-                    <li 
-                        onMouseEnter={() => setCategoriesValue(true)}
-                        > Categorías               
+                    <li className={style.buttonCategories}> Categorías               
                         <span>
                             <svg viewBox="0 0 20 20">
                                 <polyline points="5,7 10,13 15,7" fill="none" stroke="black" strokeWidth="1" />
                             </svg>
                         </span>
+                        <div className={style.dropdownCategories}>
+                            <DropdownCategories />
+                        </div>
                     </li>
-                    { categoriesValue 
-                        ? <DropdownCategories set={setCategoriesValue}/> 
-                        : <></> }
                     <li> <a href="">Ofertas</a> </li>
                     <li> <a href="">Cupones</a> </li>
                     <li> <a href="">Supermercado</a> </li>
@@ -107,7 +102,6 @@ function Navbar() {
                     </div>
                 </nav>
             </div>
-
         </header>
     )
 }
