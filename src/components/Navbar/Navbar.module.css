@@ -121,20 +121,42 @@ body {margin: 0; padding: 0;}
 .button { 
     display: grid;
     justify-self: center;
+    justify-content: space-between;
     grid-area: buttons;
     grid-auto-flow: column;
     grid-template-columns: auto; 
-    grid-column-gap: 15px;
     width: 95%;
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 0.85rem;
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
-    /* overflow-x: auto;
-    overflow-y: hidden; */
 }
 
+            /* Ocultar elementos progresivamente */
+            @media (max-width: 1100px) {
+            .button li:nth-child(6) {
+                display: none;
+            }
+            }
+            @media (max-width: 1000px) {
+            .button li:nth-child(5) {
+                display: none;
+            }
+            }
+            @media (max-width: 950px) {
+            .button li:nth-child(8) {
+                display: none;
+            }
+            }
+            @media (max-width: 900px) {
+            .button li:nth-child(7) {
+                display: none;
+            }}
+            @media (max-width: 850px) {
+            .button li:nth-child(3) {
+                display: none;
+            }}
 
 .button > li {
     align-self: end;
@@ -188,8 +210,6 @@ body {margin: 0; padding: 0;}
 .button > li > a:hover {
     color: #202020aa;
 }
-
-
 
 
 /* Button Mercado Play ------------------ */
@@ -311,7 +331,7 @@ body {margin: 0; padding: 0;}
             flex-direction: column;
             position: absolute;
             list-style: none;
-            top: 50px;
+            top: 55px;
             left: 0;
             width: 100vw;
             height: 100vh;

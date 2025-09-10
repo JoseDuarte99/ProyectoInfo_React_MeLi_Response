@@ -21,7 +21,6 @@ import imglocation from "../../assets/location.svg";
 
 
 
-
 function Navbar() {
 
     // Dropdown Menu Status
@@ -33,7 +32,6 @@ function Navbar() {
         throw new Error('useCart must be used within a CartProvider');
     }
     const {onSearch, setOnSearch} = search;
-
 
     return (
         <header className={style.header}>
