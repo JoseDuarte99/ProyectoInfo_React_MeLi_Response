@@ -1,0 +1,10 @@
+.container{
+    height: 60vh;
+    width: fit-content;
+    background: #aaa;
+    display: grid;
+}
+
+.container > div {
+    height: 100%;
+}
