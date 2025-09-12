@@ -1,56 +1,60 @@
 .container{
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
-    height: 100%;
-    width: fit-content;
-    padding: 0.5em 0.3em 1.5em 0.3em;
+    font-size: clamp(0.3rem, 1vw, 0.5rem);
     border-bottom: 1px solid #aaa8;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 5px 5px 30px 5px;
 }
 
 .container > img {
-    padding-bottom: 25px;
     width: 100%;
+    align-self: center;
 }
 
 .container > h3 {
     font-weight: lighter;
     color: #222;
-    font-size: 5vh;
+    font-size: 2em;
 }
 
 .previousPrice{
     color: #5f5f5f;
+    font-size: 1.5em;
     text-decoration: line-through solid #5f5f5f 2px;
     margin: 0;
     padding: 0;
 }
 
 .container > h4 {
-    font-size: 5vh;
+    font-size: 2.5em;
     margin: 0;
     padding: 0;
 }
 
 .priceInfo {
     color: #00a650;
+    font-size: 1.5em;
 }
 
 .freeShipping {
     font-weight: bold;
     color: #00a650;
+    font-size: 2em;
 }
 
 /* Categorie and Buttons --------------------------------- */
 .container > div {
     display: flex;
     place-content: center;
-    height: 4vh;
     gap: 2px;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 .container > div > span{
     color: #5f5f5f;
-    font-size: small;
+    font-size: 1.5em;
     padding-right: 15px;
     align-self: center;
 }

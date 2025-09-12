@@ -1,10 +1,20 @@
 .container{
-    height: 60vh;
-    width: fit-content;
-    background: #aaa;
-    display: grid;
+    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+    font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+    width: 80%;
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #0002;
+    
 }
 
 .container > div {
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 10px;
 }

@@ -1,0 +1,21 @@
+.title {
+    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.title > a {
+    text-decoration: none;
+    color: #2b7fff;
+    font-size: 0.7em;
+    padding-left: 0.4em;
+}
+
+
+    @media (max-width: 768px) {
+
+        .title{
+            display: flex;
+            flex-direction: column;
+        }
+    }  
