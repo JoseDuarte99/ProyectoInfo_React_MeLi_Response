@@ -17,7 +17,9 @@ function ProductCard( props: ProductCartType ) {
     return (
         <div className={style.container}>
             {/* <Link to={`/producto/${idProduct}`}> */}
-                <img src={img} alt={title} />
+                <div className={style.imgContent}>
+                    <img src={img} alt={title} />
+                </div>
                 <h3> {title} </h3>
                 {withDiscount && <p className={style.previousPrice}> {previousPrice !== undefined ? `$${previousPrice}` : ""} </p>}
                 <h4> ${price.toLocaleString('es-AR')} </h4>

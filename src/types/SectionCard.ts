@@ -1,6 +1,6 @@
 // TIPING THE SECTION
 export type SectionCardType = {
     titleSection: string;
-    link: string;
+    link?: string;
     children: React.ReactNode;
 };

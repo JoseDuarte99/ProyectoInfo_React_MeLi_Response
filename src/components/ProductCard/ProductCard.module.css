@@ -1,22 +1,31 @@
 .container{
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
-    font-size: clamp(0.3rem, 1vw, 0.5rem);
+    font-size: clamp(0.5rem, 2vw, 0.6rem);
     border-bottom: 1px solid #aaa8;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background: #fff;
     padding: 5px 5px 30px 5px;
+    flex-grow: 1;
+    flex-shrink: 1; 
+    flex-basis: content;
+    box-sizing: border-box;
 }
 
-.container > img {
-    width: 100%;
-    align-self: center;
+.imgContent{
+    height: 150px;
+}
+.imgContent > img {
+    width: 80%;
+    min-width: 100px;
+    max-width: 150px;
 }
 
 .container > h3 {
     font-weight: lighter;
     color: #222;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .previousPrice{
@@ -28,7 +37,7 @@
 }
 
 .container > h4 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 0;
     padding: 0;
 }
@@ -41,20 +50,20 @@
 .freeShipping {
     font-weight: bold;
     color: #00a650;
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 /* Categorie and Buttons --------------------------------- */
 .container > div {
     display: flex;
-    place-content: center;
+    justify-content: center;
     gap: 2px;
     padding-top: 10px;
 }
 
 .container > div > span{
     color: #5f5f5f;
-    font-size: 1.5em;
+    font-size: 1.2em;
     padding-right: 15px;
     align-self: center;
 }
