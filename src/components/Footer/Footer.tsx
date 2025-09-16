@@ -9,14 +9,14 @@ const GitHubSvg = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92" fi
 
 function Footer() {
     return (
-        <footer className={style.footer}>
+        <div className={style.footer}>
             <span>
                 <p>Proyecto académico inspirado en Mercado Libre. </p>
                 <p> No tiene fines comerciales, ni está afiliado a dicha empresa.</p>
             </span>
             <p>Desarrollado por<a href="https://github.com/JoseDuarte99" target="_blank">{GitHubSvg} Jose Duarte</a> como parte del programa INFORMATORIO Chaco 2025.</p> 
             <span>© Todos los derechos reservados</span> 
-        </footer>
+        </div>
     )
 }
 

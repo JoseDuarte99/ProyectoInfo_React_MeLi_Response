@@ -1,15 +1,15 @@
 // Import Components
-import Footer from "./components/Footer/Footer"
-import Navbar from "./components/Navbar/Navbar"
+// import Footer from "./components/Footer/Footer"
+// import Navbar from "./components/Navbar/Navbar"
 import Home from "./pages/Home"
 
 function App() {
 
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Home/>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 

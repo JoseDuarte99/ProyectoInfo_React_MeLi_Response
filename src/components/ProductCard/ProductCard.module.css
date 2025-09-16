@@ -6,11 +6,10 @@
     flex-direction: column;
     justify-content: space-between;
     background: #fff;
-    padding: 5px 5px 30px 5px;
-    flex-grow: 1;
-    flex-shrink: 1; 
-    flex-basis: content;
-    box-sizing: border-box;
+    padding: 5px 10px 30px 10px;
+    min-width: 180px;
+    max-width: 200px;
+    
 }
 
 .imgContent{
@@ -80,13 +79,23 @@
     color: #007595;
     cursor: pointer;
 }
-.emove {
+.remove {
     background: #ffc9c9;
     color: #c10007;
     cursor: pointer;
 }
-.emoveNone {
+.removeNone {
     background: #ebe6e7;
     color: #364153;
     cursor: not-allowed;
 }
+
+
+
+/* ------------------ PHONE SCREEN VIEW -------------------------*/
+
+        @media (max-width: 500px) {
+            .container {
+                max-width: none;
+            }
+        }   

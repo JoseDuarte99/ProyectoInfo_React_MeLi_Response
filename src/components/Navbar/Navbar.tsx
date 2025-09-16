@@ -4,13 +4,20 @@ import style from "./Navbar.module.css"
 // Import React
 import { useContext, useState } from "react";
 
-// Import Content
+// Import Components
 import Search from "../Search/Search";
 import CartIcon from "../Cart/CartIcon";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import DropdownCategories from "../DropdownCategories/DropdownCategories";
-import SearchContext from "../../context/SearchContext";
 
+// Import Context
+import SearchContext from "../../context/SearchContext";
+import CartContext from "../../context/CartContext";
+import FilterContext from "../../context/FilterContext";
+import StatusFilterContext from "../../context/StatusFilterContext";
+
+// Import Types
+import { FilterType } from "../../types/OthersTypes"; 
 
 // Import IMG
 import imgLogo from "../../assets/LogoMeLi.svg";
@@ -21,6 +28,9 @@ import imglocation from "../../assets/location.svg";
 
 
 
+
+
+
 function Navbar() {
 
     // Dropdown Menu Status
@@ -28,13 +38,29 @@ function Navbar() {
 
     // Search Context 
     const search = useContext(SearchContext);
-    if (!search){
-        throw new Error('useCart must be used within a CartProvider');
-    }
+    if (!search){throw new Error('useCart must be used within a CartProvider')}
     const {onSearch, setOnSearch} = search;
 
+    // Cart Context 
+    const productCart = useContext(CartContext);
+    if (!productCart){throw new Error('ERROR EN EL CARRITO DE COMPRAS')}
+
+    const quantityProductCart = new Set(productCart.contextState.map(p => p.idProduct));
+
+    // Filter Context 
+    const filtersProduct = useContext(FilterContext);
+    if (!filtersProduct){throw new Error('ERROR EN LOS FILTROS')}
+    const {addFilterProducts, 
+        // resetFilterProducts
+    } = filtersProduct;
+
+    // Status Filter Context 
+    const statusFiltersProduct = useContext(StatusFilterContext);
+    if (!statusFiltersProduct){throw new Error('ERROR EN EL ESTADO DEL FILTRO')}
+    const { setFilteringState } = statusFiltersProduct;
+
     return (
-        <header className={style.header}>
+        <nav className={style.header}>
             <div className={style.container}>
                 <img src={imgLogo} alt="Logo" className={style.logo}/>
                 <img src={imgLogoSmall} alt="Logo" className={style.logoSmall} />
@@ -63,11 +89,12 @@ function Navbar() {
                             <DropdownCategories />
                         </div>
                     </li>
-                    <li> <a href="">Ofertas</a> </li>
-                    <li> <a href="">Cupones</a> </li>
-                    <li> <a href="">Supermercado</a> </li>
-                    <li> <a href="">Moda</a> </li>
-                    <li className={style.buttonMercadoPlay}>
+                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Oferta"); setFilteringState(true)}}> <a href="">Ofertas</a> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Cupón"); setFilteringState(true)}}> <a href="">Cupones</a> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Category, "Supermercado"); setFilteringState(true)}}> <a href="">Supermercado</a> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Category, "Moda"); setFilteringState(true)}}> <a href="">Moda</a> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Mercado Play"); setFilteringState(true)}}
+                        className={style.buttonMercadoPlay}>
                         <span>GRATIS</span>
                         <a href="">Mercado Play</a> 
                     </li>
@@ -80,11 +107,11 @@ function Navbar() {
                         <li> <a href="">Ingresá</a> </li> 
                         <li> <a href="">Mis compras</a> </li>
                     </ul>
-                    <CartIcon quantity={0} className={style.cart}/>  
+                    <CartIcon quantity={quantityProductCart.size}className={style.cart}/>  
                 </div>  
-                <CartIcon quantity={0} className={style.cartSmall}/>                 
+                <CartIcon quantity={quantityProductCart.size} className={style.cartSmall}/>                 
 
-                <nav className={style.menu}>
+                <div className={style.menu}>
                     <input type="checkbox" id="menu" checked={menuValue} className={style.menuInput} onChange={() => setMenuValue(!menuValue)} />   
                     <label htmlFor="menu" className={style.activeMenu}>
                         { menuValue   
@@ -98,9 +125,9 @@ function Navbar() {
                     <div className={style.itemsMenu}>
                         <DropdownMenu />
                     </div>
-                </nav>
+                </div>
             </div>
-        </header>
+        </nav>
     )
 }
 

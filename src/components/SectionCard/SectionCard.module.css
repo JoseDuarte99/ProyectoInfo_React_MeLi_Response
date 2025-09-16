@@ -2,6 +2,7 @@
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
     font-size: clamp(0.8rem, 1.3vw, 1.5rem);
     width: 80%;
+    height: fit-content;
     padding: 10px;
     background: #fff;
     display: flex;
@@ -12,30 +13,37 @@
 }
 
 .container > div {
-    height: 100%;
-    max-height: 810px;
-    width: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    
+    max-height: 850px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* ---------- Hidden Scroll Bar */
+.container > div {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+.container > div::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
-        /* @media (max-width: 1000px) {
+        @media (max-width: 1250px) {
             .container > div {
                 grid-template-columns: repeat(4, 1fr);
             }
-        }   
+        }    
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             .container > div {
-                grid-template-columns: repeat(3, 1fr);      
+                grid-template-columns: repeat(3, 1fr);
             }
         }   
 
-        @media (max-width: 700px) {
+        @media (max-width: 750px) {
             .container > div {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -45,4 +53,4 @@
             .container > div {
                 grid-template-columns: 1fr;
             }
-        }    */
+        }   
