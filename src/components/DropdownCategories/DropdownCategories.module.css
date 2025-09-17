@@ -10,14 +10,11 @@
     height: auto;
     padding: 10px 0;
     align-content: center;
+    padding-left: 2rem;
+    text-decoration: none;
+    color: #fff;
 }
 .container > li:hover {
     background: #3484fa;
     cursor: pointer;
-}
-
-.container > li > a {
-    padding-left: 2rem;
-    text-decoration: none;
-    color: #fff;
 }

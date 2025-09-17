@@ -4,17 +4,27 @@ import style from "./Home.module.css"
 // Import Components
 import Footer from "../components/Footer/Footer"
 import Navbar from "../components/Navbar/Navbar"
+import Aside from "../components/Aside/Aside";
 import SectionCard from "../components/SectionCard/SectionCard"
 import ProductCard from "../components/ProductCard/ProductCard";
+import LoadingProduct from "../components/loadingProduct";
+import ErrorLoadingProduct from "../components/errorLoadingProduct";
 
 // Import Data
-import { productsDB } from "../data/db"
+import { productService } from "../data/services";
 
 // Import Context
 import CartContext from "../context/CartContext";
+import FilterContext from "../context/FilterContext";
+import StatusFilterContext from "../context/StatusFilterContext";
 
 // Import React
 import { useContext } from "react";
+import { useQuery } from "@tanstack/react-query";
+
+// Import Types
+import { FilterType } from "../types/OthersTypes";
+
 
 
 
@@ -27,20 +37,101 @@ function Home() {
         throw new Error('ERROR EN EL CARRITO DE COMPRAS');
     }
 
+    // Filter Context 
+    const filtersProduct = useContext(FilterContext);
+    if (!filtersProduct){throw new Error('ERROR EN LOS FILTROS')}
+    const { valueFilter
+        // , addFilterProducts, removeFilterProducts, resetFilterProducts 
+    } = filtersProduct;
+
+
+    // Status Filter Context 
+    const statusFiltersProduct = useContext(StatusFilterContext);
+    if (!statusFiltersProduct){throw new Error('ERROR EN EL ESTADO DEL FILTRO')}
+    const {filteringState, setFilteringState } = statusFiltersProduct;
+    
+    // Product filtering
+    const categoryFilterName = valueFilter.find(f => f.type === FilterType.Category)?.name;
+    const priceFilterMax = valueFilter.find(f => f.type === FilterType.PriceMax)?.max;
+    const priceFilterMin = valueFilter.find(f => f.type === FilterType.PriceMin)?.min;
+    const promotionFilter = valueFilter.find(f => f.type === FilterType.Promotion)?.id;
+    
+
+    // --------------------------------- IMPLEMENTANDO SERVICIOS CON REACT QUERY -----------------------------------
+    
+
+    const { isPending, isError, data, error } = useQuery({
+        queryKey:["getProduct"],
+        queryFn: productService.getAllProducts,
+    })
+
+    if (isPending) {
+        return <LoadingProduct/>
+    }
+
+    if (isError) {
+        console.error(error);
+        return <ErrorLoadingProduct/>
+    }
+
+    let productsForDisplay = data;
+
+    // const myProducts = productsForDisplay.filter(p => p.by);
+    
+    // -------------------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------------------
+    
+
+    // Filtered by category
+    if (categoryFilterName) {
+        productsForDisplay = productsForDisplay.filter(product => product.category === categoryFilterName);
+    }
+    
+    // Filtered by minium price 
+    if (priceFilterMax && priceFilterMax !== 0) {
+        productsForDisplay = productsForDisplay.filter(product =>  product.price <= priceFilterMax);
+    }
+    
+    // Filtered by maximum price
+    if (priceFilterMin && priceFilterMin > 0) {
+        productsForDisplay = productsForDisplay.filter(product =>  product.price >= priceFilterMin);
+    }
+    
+    // Filtered by type promotion
+    if (promotionFilter) {
+        productsForDisplay = productsForDisplay.filter(product =>  product.priceInfo?.includes(promotionFilter));
+    }
 
 
     return (
-    <>
+    <div className={filteringState ? style.body2 : style.body}>
         <header>
             <Navbar/>
         </header>
-        <aside className={style.aside}>
 
-        </aside>
+
+
+
+        { /* TERNARIO ---------------------------------------------------------------------------------------- */}
+        {/* { filteringState
+            ?<aside className={style.aside}>
+
+            </aside>
+            : "" } */}
+            <aside className={filteringState ? style.aside : style.notAside}>
+                <Aside/>
+            </aside>
+
+
+
         <main className={style.main}>
             <div className={style.container}>
+                {filteringState 
+                    ? <></>
+                    : <button className={style.buttonFilter} onClick={() => setFilteringState(true)}>Filtrar</button> 
+                }
                 <SectionCard titleSection="Lo más vendidos de la semana" link="Ir a Más vendidos">
-                    {productsDB.filter((p) => p.idProduct < 8 ).map(product => {
+                    {productsForDisplay.filter((p) => p.idProduct < 8 ).map(product => {
                         return (
                             <ProductCard 
                             key={product.idProduct}
@@ -61,7 +152,7 @@ function Home() {
                     }
                 </SectionCard>
                 <SectionCard titleSection="También puede interesarte">
-                    {productsDB.filter((p) => p.idProduct >= 8 && p.idProduct < 15).map(product => {
+                    {productsForDisplay.filter((p) => p.idProduct >= 8 && p.idProduct < 15).map(product => {
                         return (
                             <ProductCard 
                             key={product.idProduct}
@@ -82,7 +173,7 @@ function Home() {
                     }
                 </SectionCard>
                 <SectionCard titleSection="Productos más buscados de la semana" link="Ir a los más buscados">
-                    {productsDB.filter((p) => p.idProduct >= 15 && p.idProduct < 22).map(product => {
+                    {productsForDisplay.filter((p) => p.idProduct >= 15 && p.idProduct < 22).map(product => {
                         return (
                             <ProductCard 
                             key={product.idProduct}
@@ -103,7 +194,7 @@ function Home() {
                     }
                 </SectionCard>
                 <SectionCard titleSection="Relacionado con lo último que viste">
-                    {productsDB.filter((p) => p.idProduct >= 22 && p.idProduct < 29).map(product => {
+                    {productsForDisplay.filter((p) => p.idProduct >= 22 && p.idProduct < 29).map(product => {
                         return (
                             <ProductCard 
                             key={product.idProduct}
@@ -128,7 +219,7 @@ function Home() {
         <footer>
             <Footer/>
         </footer>
-    </>
+    </div>
     )
 }
 

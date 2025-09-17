@@ -2,7 +2,7 @@ import { useReducer, type ReactNode } from "react";
 import CartContext from "./CartContext";
 import CartReducer from "../reducers/CartReduce";
 import type { CartStateProps } from "../reducers/CartReduce";
-import type { ProductOnCartProps } from "../types/Typing";
+import type { ProductOnCartProps } from "../types/TypingAUXILIAR";
 
 interface CartProviderProps {
   children: ReactNode;

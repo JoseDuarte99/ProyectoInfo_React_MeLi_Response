@@ -1,5 +1,5 @@
-import { INITIAL_STATE } from "../types/Typing";
-import { FilterType, type actionFilterProps, type FilterStateProps } from "../types/Typing";
+import { INITIAL_STATE } from "../types/OthersTypes";
+import { FilterType, type actionFilterProps, type FilterStateProps } from "../types/OthersTypes";
 
 
 function FilterReduce(state: FilterStateProps, action: actionFilterProps): FilterStateProps {

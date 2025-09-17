@@ -3,6 +3,7 @@ import style from "./Navbar.module.css"
 
 // Import React
 import { useContext, useState } from "react";
+import { Link } from "react-router";
 
 // Import Components
 import Search from "../Search/Search";
@@ -25,9 +26,6 @@ import imgLogoSmall from "../../assets/LogoMeLi-Small.png";
 import imgShippingFree from "../../assets/EnvioGratis.webp";
 import imgSearch from "../../assets/lupa.svg";
 import imglocation from "../../assets/location.svg";
-
-
-
 
 
 
@@ -68,10 +66,10 @@ function Navbar() {
                 <img src={imgShippingFree} alt="Logo de Mercado Libre" className={style.advertising} />
                 <div className={style.location}>
                     <img src={imglocation} alt="Ubicacion" />
-                    <a>
+                    <Link to="/">
                         <span>Enviar a</span>
                         <span>Barranqueras</span>
-                    </a> 
+                    </Link> 
                     <span>
                         <svg viewBox="0 0 20 20">
                             <polyline points="7,5 13,10 7,15" fill="none" stroke="black" strokeWidth={1} />
@@ -89,23 +87,23 @@ function Navbar() {
                             <DropdownCategories />
                         </div>
                     </li>
-                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Oferta"); setFilteringState(true)}}> <a href="">Ofertas</a> </li>
-                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Cupón"); setFilteringState(true)}}> <a href="">Cupones</a> </li>
-                    <li onClick={() => {addFilterProducts(FilterType.Category, "Supermercado"); setFilteringState(true)}}> <a href="">Supermercado</a> </li>
-                    <li onClick={() => {addFilterProducts(FilterType.Category, "Moda"); setFilteringState(true)}}> <a href="">Moda</a> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Oferta"); setFilteringState(true)}}> <Link to="/">Ofertas</Link> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Cupón"); setFilteringState(true)}}> <Link to="/">Cupones</Link> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Category, "Supermercado"); setFilteringState(true)}}> <Link to="/">Supermercado</Link> </li>
+                    <li onClick={() => {addFilterProducts(FilterType.Category, "Moda"); setFilteringState(true)}}> <Link to="/">Moda</Link> </li>
                     <li onClick={() => {addFilterProducts(FilterType.Promotion, "Mercado Play"); setFilteringState(true)}}
                         className={style.buttonMercadoPlay}>
                         <span>GRATIS</span>
-                        <a href="">Mercado Play</a> 
+                        <Link to="/">Mercado Play</Link> 
                     </li>
-                    <li> <a href="">Vender</a> </li>
-                    <li> <a href="">Ayuda</a> </li>
+                    <li> <Link to="/">Vender</Link> </li>
+                    <li> <Link to="/">Ayuda</Link> </li>
                 </ul>
                 <div className={style.login}>
                     <ul>
-                        <li> <a href="">Creá tu cuenta</a> </li>
-                        <li> <a href="">Ingresá</a> </li> 
-                        <li> <a href="">Mis compras</a> </li>
+                        <li> <Link to="/">Creá tu cuenta</Link> </li>
+                        <li> <Link to="/">Ingresá</Link> </li> 
+                        <li> <Link to="/">Mis compras</Link> </li>
                     </ul>
                     <CartIcon quantity={quantityProductCart.size}className={style.cart}/>  
                 </div>  

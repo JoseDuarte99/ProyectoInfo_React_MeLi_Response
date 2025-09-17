@@ -1,11 +1,20 @@
-body {
+.body {
     background: #ebebeb;
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
     grid-template-areas: 
-        "header header header"
-        "aside main main"
-        "footer footer footer";
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+.body2 {
+    background: #ebebeb;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas: 
+    "header header header"
+    "aside main main"
+    "footer footer footer";
 }
 
 header {
@@ -14,12 +23,15 @@ header {
 
 main {
     grid-area: main;
-
+    
 }
 
-aside {
+.aside {
     grid-area: aside;
     background: #000;
+}
+.notAside{
+    display: none;
 }
 
 footer {
@@ -27,6 +39,7 @@ footer {
 }
 
 .container {
+    position: relative;
     padding: 5rem 0;
     display: flex;
     flex-direction: column;
@@ -34,4 +47,22 @@ footer {
     align-items: center;
 }
 
+.buttonFilter {
+    position: absolute;
+    left: 84%;
+    top: 54px;
+    color: #525252;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #52525233;
+    background-color: #fff;
+    padding: 0.2rem 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.9rem;
+}
 
+.buttonFilter:hover {
+    background-color: #d4d4d4;
+    color: #525252; 
+    border: none;
+}

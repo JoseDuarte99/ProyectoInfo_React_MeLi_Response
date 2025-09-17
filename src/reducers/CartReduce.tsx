@@ -1,4 +1,4 @@
-import type { ProductOnCartProps } from "../types/Typing";
+import type { ProductOnCartProps } from "../types/OthersTypes";
 
 type CartActionsProps =
 | { type: "ADD"; payload: ProductOnCartProps[] }

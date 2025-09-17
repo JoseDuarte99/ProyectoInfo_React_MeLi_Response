@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import type { FilterStateProps, FilterType } from "../types/Typing";
+import type { FilterStateProps, FilterType } from "../types/OthersTypes";
 
 interface FilterContextProps {
     valueFilter: FilterStateProps;

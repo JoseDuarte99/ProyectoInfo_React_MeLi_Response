@@ -3,7 +3,7 @@ import FilterContext from "./FilterContext"
 import FilterReduce from "../reducers/FilterReduce";
 
 
-import { FilterType, INITIAL_STATE } from "../types/Typing";
+import { FilterType, INITIAL_STATE } from "../types/OthersTypes";
 
 
 interface FilterProviderProps {

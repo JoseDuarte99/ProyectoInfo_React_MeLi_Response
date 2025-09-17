@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { ProductOnCartProps } from "../types/Typing";
+import type { ProductOnCartProps } from "../types/OthersTypes";
 
 interface CartContextProps {
   contextState: ProductOnCartProps[];
