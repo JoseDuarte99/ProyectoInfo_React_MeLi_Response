@@ -27,7 +27,7 @@ export function CartIcon({ quantity }: CartIconProps) {
 };
 
 
-export function CruzIcon({ className }: { className: string }){
+export function CruzIcon(){
   return ( 
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,6 @@ export function CruzIcon({ className }: { className: string }){
       viewBox="0 0 24 24"
       strokeWidth={2}
       stroke="currentColor"
-      className={className}
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>

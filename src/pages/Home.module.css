@@ -28,7 +28,6 @@ main {
 
 .aside {
     grid-area: aside;
-    background: #000;
 }
 .notAside{
     display: none;
