@@ -51,12 +51,12 @@ function Aside() {
             { /* TERNARIO ---------------------------------------------------------------------------------------- */}
             {filteringState && categoryFilterName
                 ? <button 
-                onClick={ () => removeFilterProducts(FilterType.Category, "")}
+                onClick={() => removeFilterProducts(FilterType.Category, "")}
                 className={style.removeFilter}> {categoryFilterName}{<CruzIcon/>}</button>
                 : <ul >
-                {categories.map((x) => (
-                    <li onClick={() => addFilterProducts(FilterType.Category, x.name)}
-                    key={x.id}>{x.name.charAt(0).toUpperCase() + x.name.slice(1)}
+                {categories.map((category) => (
+                    <li onClick={() => addFilterProducts(FilterType.Category, category.name)}
+                    key={category.id}>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}
                     </li>
                 ))}</ul>
             }
@@ -96,7 +96,6 @@ function Aside() {
                         ? style.allowed
                         : style.notAllowed
                     } 
-                    // className={style.allowed}
                     onClick={() => {
                         if (priceMax) {addFilterProducts(FilterType.PriceMax, priceMax);  setPriceMax("")};
                         if (priceMin) {addFilterProducts(FilterType.PriceMin, priceMin);  setPriceMin("")};

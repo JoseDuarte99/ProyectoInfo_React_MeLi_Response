@@ -23,7 +23,7 @@ header {
 
 main {
     grid-area: main;
-    
+    position: relative;
 }
 
 .aside {
@@ -38,7 +38,6 @@ footer {
 }
 
 .container {
-    position: relative;
     padding: 5rem 0;
     display: flex;
     flex-direction: column;
@@ -48,8 +47,8 @@ footer {
 
 .buttonFilter {
     position: absolute;
-    left: 84%;
-    top: 54px;
+    right: 10%;
+    top: 50px;
     color: #525252;
     cursor: pointer;
     border-radius: 5px;
@@ -65,3 +64,5 @@ footer {
     color: #525252; 
     border: none;
 }
+
+

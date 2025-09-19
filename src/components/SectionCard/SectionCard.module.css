@@ -9,6 +9,8 @@
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 1px 1px 10px #0002;
+    container-name: section;
+    container-type: inline-size;
 
 }
 
@@ -31,25 +33,25 @@
 
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
-        @media (max-width: 1250px) {
+        @container section (width < 900px) {
             .container > div {
                 grid-template-columns: repeat(4, 1fr);
             }
         }    
 
-        @media (max-width: 1000px) {
+        @container section (width < 720px) {
             .container > div {
                 grid-template-columns: repeat(3, 1fr);
             }
         }   
 
-        @media (max-width: 750px) {
+        @container section (width < 540px) {
             .container > div {
                 grid-template-columns: repeat(2, 1fr);
             }
         }   
 
-        @media (max-width: 500px) {
+        @container section (width < 360px) {
             .container > div {
                 grid-template-columns: 1fr;
             }

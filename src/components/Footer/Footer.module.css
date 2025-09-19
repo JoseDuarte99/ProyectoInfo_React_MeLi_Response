@@ -4,6 +4,7 @@
     color: #333;               
     text-align: center;
     padding: 20px 0 20px 0;
+    margin-top: 50px;
     font-size: clamp(0.6rem, 1vw, 1rem);
     font-family: "Proxima Nova", Arial, sans-serif, sans-serif;
     border-top: 1px solid #ddd;

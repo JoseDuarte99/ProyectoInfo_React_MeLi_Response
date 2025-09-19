@@ -109,112 +109,141 @@ function Home() {
             <Navbar/>
         </header>
 
-
-
-
         { /* TERNARIO ---------------------------------------------------------------------------------------- */}
-        {/* { filteringState
+        { filteringState
             ?<aside className={style.aside}>
-
-            </aside>
-            : "" } */}
-            <aside className={filteringState ? style.aside : style.notAside}>
                 <Aside/>
             </aside>
-
-
+            : "" }
 
         <main className={style.main}>
-            <div className={style.container}>
-                {filteringState 
-                    ? <></>
-                    : <button className={style.buttonFilter} onClick={() => setFilteringState(true)}>Filtrar</button> 
-                }
-                <SectionCard titleSection="Lo más vendidos de la semana" link="Ir a Más vendidos">
-                    {productsForDisplay.filter((p) => p.idProduct < 8 ).map(product => {
-                        return (
-                            <ProductCard 
-                            key={product.idProduct}
-                            idProduct={product.idProduct}
-                            category={product.category}
-                            img={product.img}
-                            title={product.title}
-                            previousPrice={product.previousPrice}
-                            price={product.price}
-                            withDiscount={product.withDiscount}
-                            priceInfo={product.priceInfo}
-                            freeShipping={product.freeShipping}
-                            onClickAdd={() => productCart.addProductCart([product])}
-                            onClickRemove={() => productCart.removeProductCart([product])}
-                            units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
-                            />
-                        );})
-                    }
-                </SectionCard>
-                <SectionCard titleSection="También puede interesarte">
-                    {productsForDisplay.filter((p) => p.idProduct >= 8 && p.idProduct < 15).map(product => {
-                        return (
-                            <ProductCard 
-                            key={product.idProduct}
-                            idProduct={product.idProduct}
-                            category={product.category}
-                            img={product.img}
-                            title={product.title}
-                            previousPrice={product.previousPrice}
-                            price={product.price}
-                            withDiscount={product.withDiscount}
-                            priceInfo={product.priceInfo}
-                            freeShipping={product.freeShipping}       
-                            onClickAdd={() => productCart.addProductCart([product])}
-                            onClickRemove={() => productCart.removeProductCart([product])}
-                            units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
-                            />
-                        );})
-                    }
-                </SectionCard>
-                <SectionCard titleSection="Productos más buscados de la semana" link="Ir a los más buscados">
-                    {productsForDisplay.filter((p) => p.idProduct >= 15 && p.idProduct < 22).map(product => {
-                        return (
-                            <ProductCard 
-                            key={product.idProduct}
-                            idProduct={product.idProduct}
-                            category={product.category}
-                            img={product.img}
-                            title={product.title}
-                            previousPrice={product.previousPrice}
-                            price={product.price}
-                            withDiscount={product.withDiscount}
-                            priceInfo={product.priceInfo}
-                            freeShipping={product.freeShipping}   
-                            onClickAdd={() => productCart.addProductCart([product])}
-                            onClickRemove={() => productCart.removeProductCart([product])}
-                            units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
-                            />
-                        );})
-                    }
-                </SectionCard>
-                <SectionCard titleSection="Relacionado con lo último que viste">
-                    {productsForDisplay.filter((p) => p.idProduct >= 22 && p.idProduct < 29).map(product => {
-                        return (
-                            <ProductCard 
-                            key={product.idProduct}
-                            idProduct={product.idProduct}
-                            category={product.category}
-                            img={product.img}
-                            title={product.title}
-                            previousPrice={product.previousPrice}
-                            price={product.price}
-                            withDiscount={product.withDiscount}
-                            priceInfo={product.priceInfo}
-                            freeShipping={product.freeShipping}   
-                            onClickAdd={() => productCart.addProductCart([product])}
-                            onClickRemove={() => productCart.removeProductCart([product])}
-                            units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
-                            />
-                        );})
-                    }
-                </SectionCard>
-            </div>
+        { /* TERNARIO ---------------------------------------------------------------------------------------- */}
+            {filteringState 
+                ? <>
+                </>
+                : <button className={style.buttonFilter} onClick={() => setFilteringState(true)}>Filtrar</button> 
+            }
+
+        { /* TERNARIO ---------------------------------------------------------------------------------------- */}
+            {filteringState 
+                ? <div className={style.container}>
+                    <SectionCard 
+                        titleSection =
+                            {categoryFilterName 
+                                ? promotionFilter
+                                    ? `Resultado de ${categoryFilterName} con ${promotionFilter}` 
+                                    : `Resultado de ${categoryFilterName}` 
+                                : promotionFilter
+                                    ? `Todos los productos con ${promotionFilter}`
+                                    : "Todos los productos"}>
+                        {productsForDisplay.map(product => {
+                            return (
+                                <ProductCard 
+                                key={product.idProduct}
+                                idProduct={product.idProduct}
+                                category={product.category}
+                                img={product.img}
+                                title={product.title}
+                                previousPrice={product.previousPrice}
+                                price={product.price}
+                                withDiscount={product.withDiscount}
+                                priceInfo={product.priceInfo}
+                                freeShipping={product.freeShipping}
+                                onClickAdd={() => productCart.addProductCart([product])}
+                                onClickRemove={() => productCart.removeProductCart([product])}
+                                units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
+                                />
+                            );})
+                        }
+                    </SectionCard>
+                </div>
+                : <div className={style.container}>
+                    <SectionCard titleSection="Lo más vendidos de la semana" link="Ir a Más vendidos">
+                        {productsForDisplay.filter((p) => p.idProduct < 8 ).map(product => {
+                            return (
+                                <ProductCard 
+                                key={product.idProduct}
+                                idProduct={product.idProduct}
+                                category={product.category}
+                                img={product.img}
+                                title={product.title}
+                                previousPrice={product.previousPrice}
+                                price={product.price}
+                                withDiscount={product.withDiscount}
+                                priceInfo={product.priceInfo}
+                                freeShipping={product.freeShipping}
+                                onClickAdd={() => productCart.addProductCart([product])}
+                                onClickRemove={() => productCart.removeProductCart([product])}
+                                units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
+                                />
+                            );})
+                        }
+                    </SectionCard>
+                    <SectionCard titleSection="También puede interesarte">
+                        {productsForDisplay.filter((p) => p.idProduct >= 8 && p.idProduct < 15).map(product => {
+                            return (
+                                <ProductCard 
+                                key={product.idProduct}
+                                idProduct={product.idProduct}
+                                category={product.category}
+                                img={product.img}
+                                title={product.title}
+                                previousPrice={product.previousPrice}
+                                price={product.price}
+                                withDiscount={product.withDiscount}
+                                priceInfo={product.priceInfo}
+                                freeShipping={product.freeShipping}       
+                                onClickAdd={() => productCart.addProductCart([product])}
+                                onClickRemove={() => productCart.removeProductCart([product])}
+                                units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
+                                />
+                            );})
+                        }
+                    </SectionCard>
+                    <SectionCard titleSection="Productos más buscados de la semana" link="Ir a los más buscados">
+                        {productsForDisplay.filter((p) => p.idProduct >= 15 && p.idProduct < 22).map(product => {
+                            return (
+                                <ProductCard 
+                                key={product.idProduct}
+                                idProduct={product.idProduct}
+                                category={product.category}
+                                img={product.img}
+                                title={product.title}
+                                previousPrice={product.previousPrice}
+                                price={product.price}
+                                withDiscount={product.withDiscount}
+                                priceInfo={product.priceInfo}
+                                freeShipping={product.freeShipping}   
+                                onClickAdd={() => productCart.addProductCart([product])}
+                                onClickRemove={() => productCart.removeProductCart([product])}
+                                units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
+                                />
+                            );})
+                        }
+                    </SectionCard>
+                    <SectionCard titleSection="Relacionado con lo último que viste">
+                        {productsForDisplay.filter((p) => p.idProduct >= 22 && p.idProduct < 29).map(product => {
+                            return (
+                                <ProductCard 
+                                key={product.idProduct}
+                                idProduct={product.idProduct}
+                                category={product.category}
+                                img={product.img}
+                                title={product.title}
+                                previousPrice={product.previousPrice}
+                                price={product.price}
+                                withDiscount={product.withDiscount}
+                                priceInfo={product.priceInfo}
+                                freeShipping={product.freeShipping}   
+                                onClickAdd={() => productCart.addProductCart([product])}
+                                onClickRemove={() => productCart.removeProductCart([product])}
+                                units={productCart.contextState.filter(p => p.idProduct === product.idProduct).length}                           
+                                />
+                            );})
+                        }
+                    </SectionCard>
+                </div>
+            }
         </main>
         <footer>
             <Footer/>
