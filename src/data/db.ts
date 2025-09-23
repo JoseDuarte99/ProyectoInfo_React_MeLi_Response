@@ -42,7 +42,7 @@ import imgZapatillas from "../assets/products/zapatillas-urbanas.jpg";
 import imgCamisa from "../assets/products/camisa-casual.jpg";
 import imgRemera from "../assets/products/remera-estampada.jpg";
 import imgJeans from "../assets/products/jeans-slimfit.jpg";
-import type { ProductDB } from "../types/Typing";
+import type { ProductDB } from "../types/OthersTypes";
 
 
 

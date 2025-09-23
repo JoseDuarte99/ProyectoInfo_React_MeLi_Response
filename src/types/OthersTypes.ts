@@ -39,3 +39,23 @@ export type ProductBase = {
 };
 
 export type ProductOnCartProps = ProductBase;
+
+export type ProductDB = {
+    idProduct: number;
+    category: string;
+    description: string;
+    img: string;
+    colors: Array<string> ;
+    brands: Array<string>;
+    rating: number;
+    title: string;
+    price: number;
+    inStock: boolean;
+    prime: boolean;
+    withDiscount: boolean;
+    previousPrice?: number;
+    priceInfo?: string;
+    freeShipping: boolean;
+    shippingPrice?: number;
+    by?: string;
+};

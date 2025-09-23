@@ -1,6 +1,9 @@
 // Import Style
 // import style from "./CartIcon.module.css"
 
+// Import React
+import { Link } from "react-router";
+
 type CartIconProps = {
 quantity: number;
 className?: string;
@@ -9,7 +12,7 @@ className?: string;
 function CartIcon({ quantity, className }: CartIconProps) {
 
 return (
-    <div className={className}>
+    <Link to="carrito" className={className}>
         <svg viewBox="0 0 90 50" xmlns="http://www.w3.org/2000/svg">
             {/* <!-- Main Cart --> */}
             <path d="M0 0 C21.12 0 42.24 0 64 0 C64 18.48 64 36.96 64 56 C42.88 56 21.76 56 0 56 C0 37.52 0 19.04 0 0 Z" fill="none"/>
@@ -26,7 +29,7 @@ return (
             { quantity }
             </text>
         </svg>
-    </div>);
+    </Link>);
 };
 
 export default CartIcon;

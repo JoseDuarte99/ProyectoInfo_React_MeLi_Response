@@ -1,7 +1,7 @@
 html {margin: 0; padding: 0; font-family: "Proxima Nova",Arial,sans-serif,sans-serif; }
 body {margin: 0; padding: 0;}
 
-.header {
+.navbar {
     position: relative;
     background: #ffe600;
     width: 100vw;
@@ -17,6 +17,7 @@ body {margin: 0; padding: 0;}
 
 .container{
     width: 95vw;
+    max-width: 1180px;
     height: 80%;
     display: grid;
     align-content: center;
@@ -268,7 +269,7 @@ body {margin: 0; padding: 0;}
 }
 
 /* Cart --------------------------------- */
-.cart{
+.cart {
     display: block;
     margin-bottom: -5px;
 }
@@ -340,6 +341,7 @@ body {margin: 0; padding: 0;}
             height: 100vh;
             justify-items: center;
             align-content: center ;
+            z-index: 5;
         }
 
         /* Logo PHONE SCREEN VIEW -------------- */

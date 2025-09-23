@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 // Import Components
 import Search from "../Search/Search";
-import CartIcon from "../Cart/CartIcon";
+import CartIcon from "../CartIcon/CartIcon";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import DropdownCategories from "../DropdownCategories/DropdownCategories";
 
@@ -58,7 +58,7 @@ function Navbar() {
     const { setFilteringState } = statusFiltersProduct;
 
     return (
-        <nav className={style.header}>
+        <nav className={style.navbar}>
             <div className={style.container}>
                 <img src={imgLogo} alt="Logo" className={style.logo}/>
                 <img src={imgLogoSmall} alt="Logo" className={style.logoSmall} />
@@ -105,7 +105,7 @@ function Navbar() {
                         <li> <Link to="/">Ingresá</Link> </li> 
                         <li> <Link to="/">Mis compras</Link> </li>
                     </ul>
-                    <CartIcon quantity={quantityProductCart.size}className={style.cart}/>  
+                    <CartIcon quantity={quantityProductCart.size} className={style.cart}/> 
                 </div>  
                 <CartIcon quantity={quantityProductCart.size} className={style.cartSmall}/>                 
 

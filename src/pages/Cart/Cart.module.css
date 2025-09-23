@@ -1,0 +1,18 @@
+.cart {
+    height: 100%;
+}
+
+.cart main {
+    height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.cart main > div {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1210px;
+    background: #000;
+}

@@ -2,28 +2,28 @@
 import style from "./Home.module.css"
 
 // Import Components
-import Footer from "../components/Footer/Footer"
-import Navbar from "../components/Navbar/Navbar"
-import Aside from "../components/Aside/Aside";
-import SectionCard from "../components/SectionCard/SectionCard"
-import ProductCard from "../components/ProductCard/ProductCard";
-import LoadingProduct from "../components/loadingProduct";
-import ErrorLoadingProduct from "../components/errorLoadingProduct";
+import Footer from "../../components/Footer/Footer"
+import Navbar from "../../components/Navbar/Navbar"
+import Aside from "../../components/Aside/Aside";
+import SectionCard from "../../components/SectionCard/SectionCard"
+import ProductCard from "../../components/ProductCard/ProductCard";
+import LoadingProduct from "../../components/loadingProduct";
+import ErrorLoadingProduct from "../../components/errorLoadingProduct";
 
 // Import Data
-import { productService } from "../data/services";
+import { productService } from "../../data/services";
 
 // Import Context
-import CartContext from "../context/CartContext";
-import FilterContext from "../context/FilterContext";
-import StatusFilterContext from "../context/StatusFilterContext";
+import CartContext from "../../context/CartContext";
+import FilterContext from "../../context/FilterContext";
+import StatusFilterContext from "../../context/StatusFilterContext";
 
 // Import React
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 // Import Types
-import { FilterType } from "../types/OthersTypes";
+import { FilterType } from "../../types/OthersTypes";
 
 
 
@@ -102,7 +102,7 @@ function Home() {
         productsForDisplay = productsForDisplay.filter(product =>  product.priceInfo?.includes(promotionFilter));
     }
 
-
+    
     return (
     <div className={filteringState ? style.body2 : style.body}>
         <header>
