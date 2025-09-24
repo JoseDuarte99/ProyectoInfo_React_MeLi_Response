@@ -33,9 +33,7 @@ function Home() {
 
     // ProductCart Context 
     const productCart = useContext(CartContext);
-    if (!productCart){
-        throw new Error('ERROR EN EL CARRITO DE COMPRAS');
-    }
+    if (!productCart){throw new Error('ERROR EN EL CARRITO DE COMPRAS');}
 
     // Filter Context 
     const filtersProduct = useContext(FilterContext);
@@ -104,7 +102,7 @@ function Home() {
 
     
     return (
-    <div className={filteringState ? style.body2 : style.body}>
+    <div className={filteringState ? style.homeAside: style.home}>
         <header>
             <Navbar/>
         </header>

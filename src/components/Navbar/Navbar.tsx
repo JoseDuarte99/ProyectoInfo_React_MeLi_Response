@@ -48,9 +48,7 @@ function Navbar() {
     // Filter Context 
     const filtersProduct = useContext(FilterContext);
     if (!filtersProduct){throw new Error('ERROR EN LOS FILTROS')}
-    const {addFilterProducts, 
-        // resetFilterProducts
-    } = filtersProduct;
+    const {addFilterProducts, resetFilterProducts} = filtersProduct;
 
     // Status Filter Context 
     const statusFiltersProduct = useContext(StatusFilterContext);
@@ -60,8 +58,16 @@ function Navbar() {
     return (
         <nav className={style.navbar}>
             <div className={style.container}>
-                <img src={imgLogo} alt="Logo" className={style.logo}/>
-                <img src={imgLogoSmall} alt="Logo" className={style.logoSmall} />
+                <Link to="/" 
+                    className={style.logo} 
+                    onClick={() => {setFilteringState(false); resetFilterProducts(FilterType.Reset, "")}}> 
+                        <img src={imgLogo} alt="Logo"/>
+                </Link>
+                <Link to="/"
+                    className={style.logoSmall} 
+                    onClick={() => {setFilteringState(false); resetFilterProducts(FilterType.Reset, "")}}> 
+                        <img src={imgLogoSmall} alt="Logo"/>
+                </Link>
                 <Search className={style.search} onSearch={onSearch} setOnSearch={setOnSearch} placeholder="Buscar products, marcas y más…" imgSearch= {imgSearch}/>
                 <img src={imgShippingFree} alt="Logo de Mercado Libre" className={style.advertising} />
                 <div className={style.location}>

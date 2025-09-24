@@ -12,7 +12,6 @@ body {margin: 0; padding: 0;}
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    
 }
 
 .container{
@@ -55,6 +54,9 @@ body {margin: 0; padding: 0;}
     display: block;
     justify-self: start;
     align-self: center;
+}
+.logo img {
+    width: 100%;
 }
 .logoSmall {
     display: none;
@@ -351,6 +353,9 @@ body {margin: 0; padding: 0;}
             max-height: 29px;
             display: block;
             place-self: center;
+        }
+        .logoSmall img {
+            height: 100%;
         }
 
         /* Search PHONE SCREEN VIEW -------------- */
