@@ -1,11 +1,17 @@
+import './main.css';
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
 import AppProvider from './context/AppProvider.tsx'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import Cart from './pages/Cart/Cart.tsx';
+import WithNavbarLayout from './layout/NavbarAndFooterLayout.tsx';
+import ProductById from './pages/ProductById/ProductById.tsx';
+import Home from './pages/Home/Home.tsx';
+
+// import NoNavbarLayout from './layout/NoNavbarLayout.tsx';
 
 
 const queryClient = new QueryClient()
@@ -18,16 +24,13 @@ createRoot(document.getElementById('root')!).render(
       <AppProvider>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<App />} />
-            <Route path='/carrito' element={<Cart />} />
-{/*             
             <Route element={<WithNavbarLayout />}>
-              <Route path='/' element={<Main />} />
+              <Route path='/' element={<Home />} />
               <Route path='/carrito' element={<Cart />} />
               <Route path='/producto/:id' element={<ProductById />} />
             </Route>
 
-            <Route element={<NoNavbarLayout />}>
+            {/* <Route element={<NoNavbarLayout />}>
               <Route path="/checkout" element={<CheckoutLayout />}>
                 <Route index element={<CheckoutShipping />} />
               </Route>
@@ -45,3 +48,8 @@ createRoot(document.getElementById('root')!).render(
     </QueryClientProvider>
   </StrictMode>,
 )
+
+
+          // <Routes>
+          //   <Route path='/' element={<App />} />
+          //   <Route path='/carrito' element={<Cart />} />

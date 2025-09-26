@@ -1,27 +1,30 @@
 .cartInProduct{
-    background: #ebebeb;
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
     color: #202020;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    height: fit-content;;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    height: fit-content;
+    max-height: 190px;
+    background: #fff;
     margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #0003;
 }
 
 
-
-
-.cartInProduct div h3 {
+.cartInProduct div h2 {
     margin: 0;
-    font-weight: 500;
-    font-size: 1em;
+    font-weight: bold;
+    font-size: 0.7em;
+    padding: 20px 24px;
 }
 
 .cartInProduct section {
-    display: grid;
-    grid-template-columns: 2fr 7fr 2fr 4fr;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: 2fr 6fr 3fr 4fr; */
     gap: 15px;
-    padding: 1.25rem 1.5rem;
-    background: #fff;
+    padding: 20px 24px;
+    border-top: 1px solid #ebe6e7;
 }
 
 /* Image -------- */
@@ -30,12 +33,25 @@
     width: 80px;
 }
 
-/* Title -------- */
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
 
-.title a{
+/* Title -------- */
+.title{
+    padding-left: 10px;
+}
+.title a {
     text-decoration: none;
     color: #202020;
-    font-size: 0.7em;
+    font-size: 0.6em;
+}
+.title a h3 {
+    margin: 0;
+    font-weight: lighter;
 }
 
 .title button{
@@ -45,19 +61,11 @@
     margin-top: 5px;
     width: fit-content;
 }
+
 .title button:hover{
     text-decoration: underline;
 }
 
-.cartInProduct section div:nth-child(2){
-    display: flex;
-    flex-direction: column;
-}
-
-.cartInProduct section div:last-child{
-    display: flex;
-    flex-direction: column;
-}
 
 /* Button Add and Remove */
 .addAndRemove{
@@ -71,6 +79,7 @@
 
 .addAndRemove p {
     font-size: 0.5em;
+    margin: 10px 0;
 }
 
 .addAndRemove button{
@@ -80,11 +89,82 @@
 
 .addAndRemove button:last-child {
     color: #3b82f6;
+    cursor: pointer;
 }
 
 .removeProduct {
     cursor: pointer;
+    color: #f63b3b;
 }
 .removeProductNone {
     cursor: not-allowed;
 }
+
+/* Price Info */
+.priceInfo {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.priceInfo h4 {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: lighter;
+    color: #1e2939;
+}
+
+.priceInfo p {
+    margin: 0;
+    font-size: 0.4em;
+    font-weight: bold;
+    color: #737373;
+}
+.priceInfo p:last-child{
+    padding-top: 10px ;
+    font-size: 0.6em;
+    font-weight: lighter;
+    color: #00a63e;
+}
+
+
+
+/* ------------------ PHONE SCREEN VIEW -------------------------*/
+    @media (max-width: 768px) {
+        .cartInProduct {
+            max-height: none;
+        }
+        .cartInProduct section {
+            justify-content: space-between;
+        }
+        .info {
+            flex-direction: column;
+            width: fit-content;
+            gap: 10px;
+        }
+        .addAndRemove{
+            width: 80%;
+        }
+        .priceInfo{
+            align-items: start;
+        }
+        
+        .cartInProduct img {
+            width: 80%;
+        }
+        .title {
+            padding-left: 0;
+        }
+}
+
+    @media (max-width: 600px) {
+        .cartInProduct section {
+            flex-direction: column;
+        }
+        .info{
+            align-self: center;
+        }
+        .priceInfo{
+            align-items: center;
+        }
+    }

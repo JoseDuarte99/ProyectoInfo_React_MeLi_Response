@@ -2,7 +2,7 @@
 import style from "./ProductCard.module.css"
 
 // Import React
-// import { Link } from "react-router";
+import { Link } from "react-router";
 
 // Import Types
 import type { ProductCartType } from "../../types/ProductCartType";
@@ -10,13 +10,11 @@ import type { ProductCartType } from "../../types/ProductCartType";
 
 // COMPONENT PRODUCT-CARD
 function ProductCard( props: ProductCartType ) {
-    const {
-        // idProduct, 
-        img, category, title, previousPrice, price, withDiscount, priceInfo, freeShipping, onClickAdd, onClickRemove, units, by} = props
+    const { idProduct, img, category, title, previousPrice, price, withDiscount, priceInfo, freeShipping, onClickAdd, onClickRemove, units, by} = props
 
     return (
         <div className={style.container}>
-            {/* <Link to={`/producto/${idProduct}`}> */}
+            <Link to={`/producto/${idProduct}`}>
                 <div className={style.imgContent}>
                     <img src={img} alt={title} />
                 </div>
@@ -25,7 +23,7 @@ function ProductCard( props: ProductCartType ) {
                 <h4> ${price.toLocaleString('es-AR')} </h4>
                 {withDiscount && <p className={style.priceInfo}> {priceInfo} </p>}
                 <p className={style.freeShipping} >{freeShipping ? "Envío Gratis" : ""}</p>
-            {/* </Link> */}
+            </Link>
             <div>
                 <span>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
                 <button className={style.add} onClick={onClickAdd}>+</button>

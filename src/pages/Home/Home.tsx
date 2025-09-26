@@ -2,8 +2,6 @@
 import style from "./Home.module.css"
 
 // Import Components
-import Footer from "../../components/Footer/Footer"
-import Navbar from "../../components/Navbar/Navbar"
 import Aside from "../../components/Aside/Aside";
 import SectionCard from "../../components/SectionCard/SectionCard"
 import ProductCard from "../../components/ProductCard/ProductCard";
@@ -24,8 +22,6 @@ import { useQuery } from "@tanstack/react-query";
 
 // Import Types
 import { FilterType } from "../../types/OthersTypes";
-
-
 
 
 
@@ -103,9 +99,6 @@ function Home() {
     
     return (
     <div className={filteringState ? style.homeAside: style.home}>
-        <header>
-            <Navbar/>
-        </header>
 
         { /* TERNARIO ---------------------------------------------------------------------------------------- */}
         { filteringState
@@ -243,9 +236,6 @@ function Home() {
                 </div>
             }
         </main>
-        <footer>
-            <Footer/>
-        </footer>
     </div>
     )
 }

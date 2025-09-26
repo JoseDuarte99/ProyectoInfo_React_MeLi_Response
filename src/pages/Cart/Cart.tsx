@@ -2,8 +2,6 @@
 import style from "../Cart/Cart.module.css"
 
 // Import Components
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import CartInProduct from "../../components/ProductInCart/ProductInCart";
 import CartContext from "../../context/CartContext";
 
@@ -46,9 +44,6 @@ function Cart() {
 
     return(
         <div className={style.cart}>
-            <header>
-                <Navbar/>
-            </header>
 
             <main>
                 <div>
@@ -65,8 +60,8 @@ function Cart() {
                         </div>
 
                     { productsAll.length > 0
-                        ? <div className="flex justify-end">
-                            <button  onClick={productCart.resetCart} className="bg-neutral-200 text-neutral-500 font-semibold w-[10rem] h-[2.8rem] rounded-md cursor-pointer hover:bg-neutral-300">
+                        ? <div className={style.emptyCart}>
+                            <button  onClick={productCart.resetCart}>
                                     Vaciar carrito
                             </button>
                         </div>
@@ -110,9 +105,6 @@ function Cart() {
                 </div>
             </main>
 
-            <footer>
-                <Footer/>
-            </footer>
         </div>
     )
 }

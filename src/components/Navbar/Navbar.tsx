@@ -56,8 +56,8 @@ function Navbar() {
     const { setFilteringState } = statusFiltersProduct;
 
     return (
-        <nav className={style.navbar}>
-            <div className={style.container}>
+        <header className={style.header}>
+            <nav className={style.navbar}>
                 <Link to="/" 
                     className={style.logo} 
                     onClick={() => {setFilteringState(false); resetFilterProducts(FilterType.Reset, "")}}> 
@@ -130,8 +130,8 @@ function Navbar() {
                         <DropdownMenu />
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
     )
 }
 

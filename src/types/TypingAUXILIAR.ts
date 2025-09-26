@@ -39,13 +39,15 @@ export type ProductBase = {
   by?: string;
 };
 
-export type ProductOnCartProps = ProductBase;
-
 export type ProductCardProps = ProductBase & {
 
   onClickAdd?: () => void;
   onClickRemove?: () => void;
 };
+
+
+export type ProductOnCartProps = ProductBase;
+
 
 // TIPING THE TITLE-SECTION
 export type TitleSectionProps = {

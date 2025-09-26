@@ -15,3 +15,4 @@ export type ProductCartType = {
     onClickAdd?: () => void;
     onClickRemove?: () => void;
 };
+

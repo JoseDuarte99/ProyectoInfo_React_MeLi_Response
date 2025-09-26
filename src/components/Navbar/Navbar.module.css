@@ -1,7 +1,4 @@
-html {margin: 0; padding: 0; font-family: "Proxima Nova",Arial,sans-serif,sans-serif; }
-body {margin: 0; padding: 0;}
-
-.navbar {
+.header {
     position: relative;
     background: #ffe600;
     width: 100vw;
@@ -14,7 +11,7 @@ body {margin: 0; padding: 0;}
     align-items: center;
 }
 
-.container{
+.navbar {
     width: 95vw;
     max-width: 1180px;
     height: 80%;
@@ -293,7 +290,7 @@ body {margin: 0; padding: 0;}
             padding: 0;
         }
 
-        .container {
+        .navbar  {
             width: 100vw;
             height: 100%;
             grid-template-columns: 1fr 7fr 1fr 1fr;
