@@ -45,8 +45,6 @@ function Cart() {
     return(
         <div className={style.cart}>
 
-            <main>
-                <div>
                     {/* SECTION PRODUCTS */}
                     <section  className={style.productInCart}>
 
@@ -101,9 +99,6 @@ function Cart() {
                                 </Link>
                             </div>
                     </section>
-
-                </div>
-            </main>
 
         </div>
     )

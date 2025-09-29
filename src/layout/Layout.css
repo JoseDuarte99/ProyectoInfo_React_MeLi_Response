@@ -1,0 +1,12 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    background: #ebebeb;
+    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
+}
+

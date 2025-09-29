@@ -7,11 +7,11 @@ import AppProvider from './context/AppProvider.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import Cart from './pages/Cart/Cart.tsx';
-import WithNavbarLayout from './layout/NavbarAndFooterLayout.tsx';
+import NavbarAndFooterLayout from './layout/NavbarAndFooterLayout.tsx';
 import ProductById from './pages/ProductById/ProductById.tsx';
 import Home from './pages/Home/Home.tsx';
-
-// import NoNavbarLayout from './layout/NoNavbarLayout.tsx';
+import SimpleHeaderLayout from './layout/SimpleHeaderLayout.tsx';
+import CheckoutShipping from './pages/Checkout/Checkout.tsx';
 
 
 const queryClient = new QueryClient()
@@ -24,13 +24,16 @@ createRoot(document.getElementById('root')!).render(
       <AppProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<WithNavbarLayout />}>
+            <Route element={<NavbarAndFooterLayout />}>
               <Route path='/' element={<Home />} />
               <Route path='/carrito' element={<Cart />} />
               <Route path='/producto/:id' element={<ProductById />} />
             </Route>
+            <Route element={<SimpleHeaderLayout />}>
+              <Route path='/checkout' element={<CheckoutShipping />}/>
+            </Route>
 
-            {/* <Route element={<NoNavbarLayout />}>
+            {/* <Route element={<SimpleHeaderLayout />}>
               <Route path="/checkout" element={<CheckoutLayout />}>
                 <Route index element={<CheckoutShipping />} />
               </Route>

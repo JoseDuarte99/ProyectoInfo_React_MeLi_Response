@@ -107,7 +107,7 @@ function Home() {
             </aside>
             : "" }
 
-        <main className={style.main}>
+        {/* <div className={style.products}> */}
         { /* TERNARIO ---------------------------------------------------------------------------------------- */}
             {filteringState 
                 ? <>
@@ -235,8 +235,8 @@ function Home() {
                     </SectionCard>
                 </div>
             }
-        </main>
-    </div>
+        </div>
+    // </div>
     )
 }
 

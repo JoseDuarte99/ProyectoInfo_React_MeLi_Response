@@ -4,7 +4,7 @@
     grid-template-columns: 1fr 2fr 2fr;
     grid-template-areas: 
     "header header header"
-    "main main main"
+    "container container container"
     "footer footer footer";
 }
 
@@ -14,7 +14,7 @@
     grid-template-columns: 1fr 2fr 2fr;
     grid-template-areas: 
     "header header header"
-    "aside main main"
+    "aside container container"
     "footer footer footer";
 }
 
@@ -22,10 +22,10 @@ header {
     grid-area: header;
 }
 
-main {
-    grid-area: main;
+/* .products {
+    grid-area: products;
     position: relative;
-}
+} */
 
 .aside {
     grid-area: aside;
@@ -39,17 +39,19 @@ footer {
 }
 
 .container {
+    grid-area: container;
     padding: 5rem 0;
     display: flex;
     flex-direction: column;
     gap: 5rem;
     align-items: center;
+    position: relative;
 }
 
 .buttonFilter {
     position: absolute;
     right: 10%;
-    top: 50px;
+    top: 150px;
     color: #525252;
     cursor: pointer;
     border-radius: 5px;
@@ -58,6 +60,7 @@ footer {
     padding: 0.2rem 1rem;
     transition: background-color 0.2s ease, color 0.2s ease;
     font-size: 0.9rem;
+    z-index: 5;
 }
 
 .buttonFilter:hover {

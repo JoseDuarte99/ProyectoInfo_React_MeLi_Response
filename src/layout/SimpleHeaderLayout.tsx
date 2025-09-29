@@ -1,12 +1,12 @@
-import { Outlet } from "react-router";
-import  Navbar  from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import "./Layout.css"
+import { Outlet } from "react-router";
+import SimpleHeader from "../components/SimpleHeader/SimpleHeader";
+import Footer from "../components/Footer/Footer";
 
 
-const NavbarAndFooterLayout = () => (
+const SimpleHeaderLayout = () => (
   <div className="layout">
-    <Navbar />
+    <SimpleHeader />
       <main className="content">
         <Outlet />
       </main>
@@ -14,4 +14,4 @@ const NavbarAndFooterLayout = () => (
   </div>
 );
 
-export default NavbarAndFooterLayout;
+export default SimpleHeaderLayout;

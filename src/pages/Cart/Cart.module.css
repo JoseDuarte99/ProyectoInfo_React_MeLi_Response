@@ -1,28 +1,18 @@
 .cart {
-    min-height: 100vh;
-    background: #ebebeb;
-    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
     color: #202020;
-}
-
-.cart main {
     height: fit-content;
-    padding-top: 80px;
-    display: flex;
-    justify-content: center;
-}
-
-.cart main > div {
     width: 80vw;
+    max-width: 1210px;
+    padding: 80px 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1210px;
     gap: 5vw;
+    justify-self: center;
 }
 
 .productInCart {
     grid-column: span 2;
-    min-width: 240px;
+    min-width: 220px;
 }
 
 .productInCart > h1 {
@@ -71,8 +61,9 @@
     justify-content: space-between;
     border-radius: 10px;
     max-height: 300px;
+    min-width: 135px;
     box-shadow: 2px 2px 5px #0003;
-    container: totalPriceCart;
+    container: totalPriceCart / inline-size;
 }
 
 .totalPriceCart > h3 {
@@ -170,12 +161,30 @@
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
-        
-            .cart main > div {
+        .cart main > div {
             width: 90vw;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             max-width: 1210px;
             gap: 5vw;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .cart {
+            width: 95vw;
+        }
+        .cart main {
+            padding-top: 50px;
+        }
+        .cart main > div {
+            width: 97vw;
+            gap: 2vw;
+        }
+    }    
+
+    @container totalPriceCart (width < 170px) {
+        .infoPrice > span{
+            flex-direction: column;
         }
     }

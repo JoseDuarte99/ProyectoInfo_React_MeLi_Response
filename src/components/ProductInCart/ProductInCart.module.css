@@ -1,5 +1,4 @@
 .cartInProduct{
-    font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
     color: #202020;
     font-size: clamp(1.2rem, 2vw, 1.5rem);
     height: fit-content;
@@ -75,10 +74,11 @@
     border: 1px solid #202020;
     border-radius: 5px;
     padding: 0 10px;
+    width: 5vw;
 }
 
 .addAndRemove p {
-    font-size: 0.5em;
+    font-size: 0.7em;
     margin: 10px 0;
 }
 
@@ -155,7 +155,7 @@
         .title {
             padding-left: 0;
         }
-}
+    }
 
     @media (max-width: 600px) {
         .cartInProduct section {
@@ -166,5 +166,11 @@
         }
         .priceInfo{
             align-items: center;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .cartInProduct section {
+            padding: 10px 12px;
         }
     }
