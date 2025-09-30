@@ -29,6 +29,7 @@ header {
 
 .aside {
     grid-area: aside;
+    padding: 80px 0 0 5vw;
 }
 .notAside{
     display: none;
@@ -60,7 +61,7 @@ footer {
     padding: 0.2rem 1rem;
     transition: background-color 0.2s ease, color 0.2s ease;
     font-size: 0.9rem;
-    z-index: 5;
+    z-index: 2;
 }
 
 .buttonFilter:hover {

@@ -1,3 +1,4 @@
+
 // TIPING THE SEARCH
 export type SearchProps = {
     placeholder?: string;
@@ -5,4 +6,5 @@ export type SearchProps = {
     onSearch: string;
     setOnSearch: React.Dispatch<React.SetStateAction<string>>;
     className?: string;
+
 };

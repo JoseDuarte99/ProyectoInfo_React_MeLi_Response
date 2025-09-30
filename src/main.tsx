@@ -11,7 +11,7 @@ import NavbarAndFooterLayout from './layout/NavbarAndFooterLayout.tsx';
 import ProductById from './pages/ProductById/ProductById.tsx';
 import Home from './pages/Home/Home.tsx';
 import SimpleHeaderLayout from './layout/SimpleHeaderLayout.tsx';
-import CheckoutShipping from './pages/Checkout/Checkout.tsx';
+import CheckoutShipping from './pages/Checkout/CheckoutShipping.tsx';
 
 
 const queryClient = new QueryClient()

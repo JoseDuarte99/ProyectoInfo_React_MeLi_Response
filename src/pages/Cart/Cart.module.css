@@ -115,7 +115,7 @@
 }
 .buttonComprar button {
     background-color: #3b82f6;
-    color: white;
+    color: #fff;
     margin-top: 1rem;
     width: 100%;
     min-height: 30px;
@@ -168,11 +168,13 @@
             max-width: 1210px;
             gap: 5vw;
         }
+
     }
 
     @media (max-width: 500px) {
         .cart {
             width: 95vw;
+            grid-template-columns: repeat(2, 1fr);
         }
         .cart main {
             padding-top: 50px;
@@ -180,6 +182,9 @@
         .cart main > div {
             width: 97vw;
             gap: 2vw;
+        }
+        .totalPriceCart {
+            grid-column: span 2;
         }
     }    
 

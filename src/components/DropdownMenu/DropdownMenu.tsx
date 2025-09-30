@@ -3,43 +3,50 @@ import style from "./DropdownMenu.module.css"
 
 // Import IMG and SVG
 import ProfileNone from "../../../public/SinPerfil.jpg"
-import { HomeSvg, OfferSvg, PlaySvg, HistorySvg, HeadsetSvg, SuperMarketSvg, FashionSvg, BestSellingSvg, OfficialStoreSvg, CategoriesSvg, SummarySvg, OnSaleSvg, DownloadSvg } from "./DropdownMenuIcons"
+import { HomeSvg, OfferSvg, SuperMarketSvg, FashionSvg, OnSaleSvg, 
+        // PlaySvg, HistorySvg, HeadsetSvg, BestSellingSvg, OfficialStoreSvg, CategoriesSvg, SummarySvg, DownloadSvg 
+    } from "./DropdownMenuIcons"
+import { Link } from "react-router"
 
+type DropdownMenuType = {
+    onClickDropdownMenu: () => void;
+}
 
-function DropdownMenu() {
+function DropdownMenu({onClickDropdownMenu} :DropdownMenuType) {
     return (
         <>
             <div className={style.profile}>
                 <img src={ProfileNone} alt="Foto de perfil" />
                 <h5>Bienvenido</h5>
-                <p>Ingresa a tu cuenta para ver tus compras, favoritos, etc.</p>
-                <div className={style.buttons}>
+                <p> Pronto podras formar parte de nuestra comunidad...</p>
+                {/* <p>Ingresa a tu cuenta para ver tus compras, favoritos, etc.</p> */}
+                {/* <div className={style.buttons}>
                     <button> Ingresá </button>
                     <button> Creá tu cuenta </button>
-                </div>
+                </div> */}
             </div>
             <div className={style.options}>
                 <ul>
-                    <li>{HomeSvg}<a href="">Inicio</a></li>
-                    <li>{OfferSvg}<a href="">Ofertas</a></li>
-                    <li>{PlaySvg}<a href="">Mercado Play</a><span className={style.buttonMercadoPlay}>GRATIS</span></li>
-                    <li>{HistorySvg}<a href="">Historial</a></li>
-                    <li>{HeadsetSvg}<a href="">Ayuda</a></li>
+                    <li>{HomeSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Inicio</Link></li>
+                    <li>{OfferSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Ofertas</Link></li>
+                    {/* <li>{PlaySvg}<Link to={"/"} onClick={onClickDropdownMenu} >Mercado Play</Link><span className={style.buttonMercadoPlay}>GRATIS</span></li>
+                    <li>{HistorySvg}<Link to={"/"} onClick={onClickDropdownMenu} >Historial</Link></li>
+                    <li>{HeadsetSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Ayuda</Link></li> */}
                 </ul>
                 <ul>
-                    <li>{SuperMarketSvg}<a href="">Supermercado</a></li>
-                    <li>{FashionSvg}<a href="">Moda</a></li>
-                    <li>{BestSellingSvg}<a href="">Mas vendidos</a><span className={style.buttonBestSelling}>NUEVO</span></li>
-                    <li>{OfficialStoreSvg}<a href="">Tiendas oficiales</a></li>
-                    <li>{CategoriesSvg}<a href="">Categorías</a></li>
+                    <li>{SuperMarketSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Supermercado</Link></li>
+                    <li>{FashionSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Moda</Link></li>
+                    {/* <li>{BestSellingSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Mas vendidos</Link><span className={style.buttonBestSelling}>NUEVO</span></li>
+                    <li>{OfficialStoreSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Tiendas oficiales</Link></li>
+                    <li>{CategoriesSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Categorías</Link></li> */}
                 </ul>
                 <ul>
-                    <li>{SummarySvg}<a href="">Resumen</a></li>
-                    <li>{OnSaleSvg}<a href="">Vender</a></li>
+                    {/* <li>{SummarySvg}<Link to={"/"} onClick={onClickDropdownMenu} >Resumen</Link></li> */}
+                    <li>{OnSaleSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Vender</Link></li>
                 </ul>
-                <ul>
-                    <li>{DownloadSvg}<a href="">¡Comprá y vendé con la app!</a></li>
-                </ul>
+                {/* <ul>
+                    <li>{DownloadSvg}<Link to={"/"} onClick={onClickDropdownMenu} >¡Comprá y vendé con la app!</Link></li>
+                </ul> */}
             </div>
         </>
     )

@@ -127,7 +127,7 @@ function Navbar() {
                             </svg>}
                     </label>
                     <div className={style.itemsMenu}>
-                        <DropdownMenu />
+                        <DropdownMenu onClickDropdownMenu={() => setMenuValue(!menuValue)}/>
                     </div>
                 </div>
             </nav>

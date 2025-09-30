@@ -1,0 +1,211 @@
+
+.checkoutShipping {
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+    padding: 50px 0;
+    width: 80vw;
+    max-width: 1210px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2vw;
+    justify-self: center;
+}
+
+.deliveryTypes {
+    height: fit-content;
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* min-width: 405px; */
+}
+
+.deliveryTypes > h2 {
+    font-size: 1em;
+    font-weight: 500;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.container {
+    background: #f5f5f5;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #0003;
+    padding: 20px 24px;
+}
+.container > div {
+    border-top:1px solid #ebebeb ;
+}
+.container > div > h4 {
+    margin: 0;
+    padding-top: 20px;
+    font-size: 0.7em;
+    font-weight: 100;
+    color: #1447e6;
+}
+
+
+/* Section --------------------------------------- */
+.section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section > div {
+    display: flex;
+    gap: 20px;
+}
+
+.section > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.section > div > div > h3 {
+    margin: 0;
+    font-size: 0.8em;
+}
+.section > div > div > p {
+    margin: 0;
+    font-size: 0.7em;
+    color: #404040;
+}
+.shippingType {
+    font-size: 1em;
+    font-weight: 100;
+    margin: 0 0 50px 0;
+    min-width: 100px;
+}
+.freeShipping {
+    font-size: 0.8em;
+    color: #00c951;
+    letter-spacing: 0.5px;
+    margin: 0 0 30px 0;
+    min-width: 100px;
+}
+
+
+/* Summary ------------------------------------------------------*/
+.summary{
+    background: #f5f5f5;
+    height: fit-content;
+    min-width: 70px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #0003;
+    padding: 16px 20px;
+    container: summary / inline-size;
+}
+
+.summary > h2 {
+    font-size: 0.7em;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.summary > div:nth-of-type(1) {
+    border-top: 1px solid #ebebeb ;
+    border-bottom: 1px solid #ebebeb ;
+    padding: 16px 0;
+}
+.summary > div:nth-of-type(1) > div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6em;
+    padding: 4px 0;
+}
+.summary > div:nth-of-type(1) > div > p{
+    margin: 0;
+    color: #404040;
+}
+
+.summary > div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary > div:nth-of-type(2) > p {
+    margin: 0;
+    margin-top: 16px;
+    font-size: 0.8em;
+}
+
+/* Buttons ------------------------------------------------- */
+.buttons {
+    align-self: end;
+}
+.buttons > a {
+    height: 100%;
+    width: fit-content;
+    margin: 0 5px;
+}
+
+
+.buttons > a:nth-of-type(1) > button {
+    background-color: #e5e7eb;
+    color: #374151;
+    min-height: 30px;
+    height: fit-content;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 10px 15px;
+}
+.buttons > a:nth-of-type(1) > button:hover {
+    background-color: #d1d5db;
+}
+
+.buttons > a:nth-of-type(2) > button {
+    background-color: #3b82f6;
+    color: #fff;
+    min-height: 30px;
+    height: fit-content;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 10px 15px;
+}
+.buttons > a:nth-of-type(2) > button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ------------------ PHONE SCREEN VIEW -------------------------*/
+
+    @media (max-width: 650px) {
+        .checkoutShipping {
+            width: 95vw;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .checkoutShipping {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .summary {
+            margin-top: 20px;
+            grid-column: span 2;
+        }
+    }
+
+    @container summary (width <= 105px){
+        .summary > div:nth-of-type(1) > div {
+            flex-direction: column;
+        }
+        .summary > div:nth-of-type(2) {
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .summary > div:nth-of-type(2) > p {
+            margin: 0;
+        }
+    }

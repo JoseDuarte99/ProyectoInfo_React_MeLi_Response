@@ -148,9 +148,13 @@
         .priceInfo{
             align-items: start;
         }
-        
+        .cartInProduct section a{
+            display: flex;
+            justify-content: center;
+        }
         .cartInProduct img {
-            width: 80%;
+            width: 50%;
+            justify-items: center;
         }
         .title {
             padding-left: 0;
