@@ -12,17 +12,17 @@ import { Link } from "react-router";
 import { productService } from "../../data/services";
 
 // Import Components
-import LoadingProduct from "../loadingProduct";
+// import LoadingProduct from "../loadingProduct";
 import ErrorLoadingProduct from "../errorLoadingProduct";
 
 
 
 
 function Search(props: SearchProps){
-    const { placeholder, imgSearch, onSearch, setOnSearch, className} = props
+    const { placeholder, imgSearch, onSearch, setOnSearch} = props
 
     const searching = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setOnSearch(e.target.value);
+        setOnSearch(e.target.value);
     };
 
     // Function for normalize string
@@ -32,21 +32,21 @@ function Search(props: SearchProps){
     // --------------------------------- IMPLEMENTANDO SERVICIOS CON REACT QUERY -----------------------------------
     
 
-    const { isPending, isError, data, error } = useQuery({
+    const {isError, data, error } = useQuery({
         queryKey:["getProduct"],
         queryFn: productService.getAllProducts,
     })
 
-    if (isPending) {
-        return <LoadingProduct/>
-    }
+    // if (isPending) {
+    //     return <LoadingProduct/>
+    // }
 
     if (isError) {
         console.error(error);
         return <ErrorLoadingProduct/>
     }
 
-    const products = data;
+    const products = data ? data : [];
     
     // -------------------------------------------------------------------------------------------------------------
 
@@ -56,13 +56,17 @@ function Search(props: SearchProps){
         : undefined;
 
     return(
-        <div className={className}>
+        <>
             <input 
                 value={onSearch}
                 onChange={searching}
                 className={style.inputSearch}
                 type="search" 
                 placeholder={ placeholder }
+                onBlur={() => {
+                    setTimeout(() => setOnSearch(""), 100);
+                }}
+                
             />
             <button type="submit" className={style.buttonSearch}>
                 <img src={imgSearch} alt="Lupa" />
@@ -72,14 +76,14 @@ function Search(props: SearchProps){
             ? <div className={style.searchResult}>
             {resultSearch.map(product => {
                 return (                
-                    <Link to={`/producto/${product.idProduct}`} key={product.idProduct} >
+                    <Link to={`/producto/${product.idProduct}`} onClick={() => setOnSearch("")} key={product.idProduct} >
                         <img  src={imgSearch} alt="Lupa" />
                         <p>{product.title}</p>
                     </Link>
                 )})}
                 </div>
             : <></> }
-        </div>
+        </>
     );
 }
 

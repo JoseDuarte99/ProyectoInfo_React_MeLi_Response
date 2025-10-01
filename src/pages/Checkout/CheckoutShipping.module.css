@@ -181,7 +181,7 @@
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
 
-    @media (max-width: 650px) {
+    @media (max-width: 768px) {
         .checkoutShipping {
             width: 95vw;
         }

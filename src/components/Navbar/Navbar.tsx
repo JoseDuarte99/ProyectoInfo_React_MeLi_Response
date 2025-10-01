@@ -34,6 +34,7 @@ function Navbar() {
     // Dropdown Menu Status
     const [menuValue, setMenuValue] = useState(false); 
 
+
     // Search Context 
     const search = useContext(SearchContext);
     if (!search){throw new Error('useCart must be used within a CartProvider')}
@@ -68,7 +69,9 @@ function Navbar() {
                     onClick={() => {setFilteringState(false); resetFilterProducts(FilterType.Reset, "")}}> 
                         <img src={imgLogoSmall} alt="Logo"/>
                 </Link>
-                <Search className={style.search} onSearch={onSearch} setOnSearch={setOnSearch} placeholder="Buscar products, marcas y más…" imgSearch= {imgSearch}/>
+                <div className={style.search}>
+                    <Search onSearch={onSearch} setOnSearch={setOnSearch} placeholder="Buscar products, marcas y más…" imgSearch= {imgSearch}/>
+                </div>
                 <img src={imgShippingFree} alt="Logo de Mercado Libre" className={style.advertising} />
                 <div className={style.location}>
                     <img src={imglocation} alt="Ubicacion" />
@@ -102,7 +105,7 @@ function Navbar() {
                         <span>GRATIS</span>
                         <Link to="/">Mercado Play</Link> 
                     </li>
-                    <li> <Link to="/">Vender</Link> </li>
+                    <li> <Link to="/publicarProducto">Vender</Link> </li>
                     <li> <Link to="/">Ayuda</Link> </li>
                 </ul>
                 <div className={style.login}>

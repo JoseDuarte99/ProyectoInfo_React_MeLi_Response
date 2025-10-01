@@ -161,6 +161,9 @@
 
 /* ------------------ PHONE SCREEN VIEW -------------------------*/
     @media (max-width: 768px) {
+        .cart {
+            width: 95vw;
+        }
         .cart main > div {
             width: 90vw;
             display: grid;

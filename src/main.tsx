@@ -1,17 +1,22 @@
+// Import Style
 import './main.css';
 
+// Import React
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import AppProvider from './context/AppProvider.tsx'
-
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Route, Routes } from 'react-router';
+
+// Import Components
+import AppProvider from './context/AppProvider.tsx'
 import Cart from './pages/Cart/Cart.tsx';
 import NavbarAndFooterLayout from './layout/NavbarAndFooterLayout.tsx';
 import ProductById from './pages/ProductById/ProductById.tsx';
 import Home from './pages/Home/Home.tsx';
 import SimpleHeaderLayout from './layout/SimpleHeaderLayout.tsx';
 import CheckoutShipping from './pages/Checkout/CheckoutShipping.tsx';
+import NotFound404 from './pages/NotFound404/NotFound404.tsx';
+import PublishProduct from './pages/PublishProduct/PublishProduct.tsx';
 
 
 const queryClient = new QueryClient()
@@ -31,6 +36,8 @@ createRoot(document.getElementById('root')!).render(
             </Route>
             <Route element={<SimpleHeaderLayout />}>
               <Route path='/checkout' element={<CheckoutShipping />}/>
+              <Route path="/publicarProducto" element={<PublishProduct/>}/>
+              <Route path='*' element={<NotFound404 />} />
             </Route>
 
             {/* <Route element={<SimpleHeaderLayout />}>

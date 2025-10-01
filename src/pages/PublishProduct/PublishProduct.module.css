@@ -1,0 +1,56 @@
+.publishProduct {
+    background: linear-gradient(to bottom, #fde68a 60%, #ebebeb 40%);
+    font-size: clamp(1rem, 2vw, 1.5rem); 
+}
+
+.publishProduct > div {
+    width: 80vw;
+    justify-self: center;
+}
+
+.publishProduct > div > h2 {
+    margin: 0;
+    padding: 80px 0;
+    font-size: 1.4em;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.buttonHome {
+    justify-self: center;
+    margin: 20px 0;
+}
+
+.buttonHome > a{
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    color: #737373;
+}
+
+/* Categories ------------------------------------------- */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+
+}
+
+.categories > a {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background: #fff;
+    padding: 20px;
+    text-decoration: none;
+    color: #202020;
+    font-size: 0.8em;
+}
+
+.categories > a > svg {
+    align-self: center;
+}
+.categories > a > p {
+    align-self: center;
+}
