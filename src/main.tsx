@@ -17,6 +17,8 @@ import SimpleHeaderLayout from './layout/SimpleHeaderLayout.tsx';
 import CheckoutShipping from './pages/Checkout/CheckoutShipping.tsx';
 import NotFound404 from './pages/NotFound404/NotFound404.tsx';
 import PublishProduct from './pages/PublishProduct/PublishProduct.tsx';
+import PublishProductLayout from './layout/PublishProductLayout.tsx';
+import PublishProductForm from './pages/PublishProductForm/PublishProductForm.tsx';
 
 
 const queryClient = new QueryClient()
@@ -29,37 +31,27 @@ createRoot(document.getElementById('root')!).render(
       <AppProvider>
         <BrowserRouter>
           <Routes>
+            {/* Navbar and Footer ------------- */}
             <Route element={<NavbarAndFooterLayout />}>
               <Route path='/' element={<Home />} />
               <Route path='/carrito' element={<Cart />} />
               <Route path='/producto/:id' element={<ProductById />} />
             </Route>
+
+            {/* Simple Header------------- */}
             <Route element={<SimpleHeaderLayout />}>
               <Route path='/checkout' element={<CheckoutShipping />}/>
-              <Route path="/publicarProducto" element={<PublishProduct/>}/>
               <Route path='*' element={<NotFound404 />} />
+              {/* Publish Product ------*/}
+              <Route path="/publicarProducto" element={<PublishProductLayout />}>
+                <Route index element={<PublishProduct/>} />
+                <Route path="form/:category" element={<PublishProductForm />} />
+              </Route>
             </Route>
 
-            {/* <Route element={<SimpleHeaderLayout />}>
-              <Route path="/checkout" element={<CheckoutLayout />}>
-                <Route index element={<CheckoutShipping />} />
-              </Route>
-              
-              <Route path="/crearProducto" element={<CreateProductLayout />}>
-                <Route index element={<CreateProduct />} />
-                <Route path="form/:category" element={<CreateProductForm />} />
-              </Route>
-
-              <Route path='*' element={<NotFound404 />} />
-            </Route> */}
           </Routes>
         </BrowserRouter>
       </AppProvider>
     </QueryClientProvider>
   </StrictMode>,
 )
-
-
-          // <Routes>
-          //   <Route path='/' element={<App />} />
-          //   <Route path='/carrito' element={<Cart />} />

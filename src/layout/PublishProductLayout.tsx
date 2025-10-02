@@ -1,10 +1,10 @@
 import { Outlet } from "react-router";
 
 
-const CreateProductLayout = () => (
+const PublishProductLayout = () => (
     <>
         <Outlet />
     </>
 );
 
-export default CreateProductLayout;
+export default PublishProductLayout;

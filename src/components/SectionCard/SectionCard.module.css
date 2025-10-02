@@ -1,7 +1,8 @@
 .container{
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
-    font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+    font-size: clamp(0.8rem, 1.3vw, 1.2rem);
     width: 80%;
+    max-width: 1150px;
     height: fit-content;
     padding: 10px;
     background: #fff;

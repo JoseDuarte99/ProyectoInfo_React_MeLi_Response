@@ -18,7 +18,7 @@
 
 .buttonHome {
     justify-self: center;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 .buttonHome > a{
@@ -31,10 +31,10 @@
 
 /* Categories ------------------------------------------- */
 .categories {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .categories > a {
@@ -50,7 +50,18 @@
 
 .categories > a > svg {
     align-self: center;
+    margin-top: 20px;
 }
 .categories > a > p {
     align-self: center;
+    margin: 20px 0;
+    font-size: 0.8em;
 }
+
+
+/* ------------------ PHONE SCREEN VIEW -------------------------*/
+    @media (max-width: 500px) {
+        .publishProduct > div {
+            width: 95vw;
+        }
+    }
