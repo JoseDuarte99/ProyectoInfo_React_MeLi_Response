@@ -339,6 +339,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
+            background: #0008;
             justify-items: center;
             align-content: center ;
             z-index: 5;

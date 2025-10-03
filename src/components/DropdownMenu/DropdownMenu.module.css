@@ -86,17 +86,17 @@
     margin: 0;
     padding-left: 30px;
     list-style: none;
-    height: 15vh;
+    height: 7vh;
     border-bottom: 1px solid #ddd;
 }
 
-.options > ul:nth-child(3){
+/* .options > ul:nth-child(3){
     height: 14vh;
 }
 
 .options > ul:last-child{
     height: 7vh;
-}
+} */
 
 .options > ul > li{
     align-content: center;

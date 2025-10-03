@@ -3,8 +3,8 @@ import style from "./DropdownMenu.module.css"
 
 // Import IMG and SVG
 import ProfileNone from "../../../public/SinPerfil.jpg"
-import { HomeSvg, OfferSvg, SuperMarketSvg, FashionSvg, OnSaleSvg, 
-        // PlaySvg, HistorySvg, HeadsetSvg, BestSellingSvg, OfficialStoreSvg, CategoriesSvg, SummarySvg, DownloadSvg 
+import { HomeSvg, SummarySvg, OnSaleSvg, 
+        // FashionSvg, OfferSvg, SuperMarketSvg, PlaySvg, HistorySvg, HeadsetSvg, BestSellingSvg, OfficialStoreSvg, CategoriesSvg, DownloadSvg 
     } from "./DropdownMenuIcons"
 import { Link } from "react-router"
 
@@ -28,15 +28,16 @@ function DropdownMenu({onClickDropdownMenu} :DropdownMenuType) {
             <div className={style.options}>
                 <ul>
                     <li>{HomeSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Inicio</Link></li>
-                    <li>{OfferSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Ofertas</Link></li>
+                    {/* <li>{OfferSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Ofertas</Link></li> */}
+                    {/* <li>{SuperMarketSvg}<Link to={"/ayuda"} onClick={onClickDropdownMenu} >Supermercado</Link></li> */}
                     {/* <li>{PlaySvg}<Link to={"/"} onClick={onClickDropdownMenu} >Mercado Play</Link><span className={style.buttonMercadoPlay}>GRATIS</span></li>
                     <li>{HistorySvg}<Link to={"/"} onClick={onClickDropdownMenu} >Historial</Link></li>
                     <li>{HeadsetSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Ayuda</Link></li> */}
                 </ul>
                 <ul>
-                    <li>{SuperMarketSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Supermercado</Link></li>
-                    <li>{FashionSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Moda</Link></li>
-                    {/* <li>{BestSellingSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Mas vendidos</Link><span className={style.buttonBestSelling}>NUEVO</span></li>
+                    <li>{SummarySvg}<Link to={"/ayuda"} onClick={onClickDropdownMenu} >Ayuda</Link></li>
+                    {/* <li>{FashionSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Moda</Link></li>
+                    <li>{BestSellingSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Mas vendidos</Link><span className={style.buttonBestSelling}>NUEVO</span></li>
                     <li>{OfficialStoreSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Tiendas oficiales</Link></li>
                     <li>{CategoriesSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Categorías</Link></li> */}
                 </ul>
