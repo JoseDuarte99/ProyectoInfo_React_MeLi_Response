@@ -1,5 +1,5 @@
 
-import type { PostProductProps, ProductDB } from '../types/OthersTypes';
+import type { PostProductProps, ProductDB } from '../types/TypingAUXILIAR';
 import { productsDB, categories } from './db';
 
 type Filters = {priceRange: {max: number, min: number}, primeOnly?: boolean, colors: string, brands:Array<string>, rating:number ,inStock?:boolean, }
