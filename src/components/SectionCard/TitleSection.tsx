@@ -4,6 +4,9 @@ import style from "./TitleSection.module.css"
 // Import Types
 import type { TitleSectionType } from "../../types/TitleSectionType";
 
+// Import React
+import { Link } from "react-router";
+
 
 // COMPONENT TITLE-SECTION
 function TitleSection(props: TitleSectionType) {
@@ -11,7 +14,7 @@ function TitleSection(props: TitleSectionType) {
     
     return (
         <h2  className={style.title}>
-            {title}<a href="#">{link}</a>
+            {title}<Link to="/*">{link}</Link>
         </h2>
     );
 };

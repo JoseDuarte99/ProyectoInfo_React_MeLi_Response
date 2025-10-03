@@ -1,10 +1,9 @@
 .container{
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif;
     font-size: clamp(0.8rem, 1.3vw, 1.2rem);
-    width: 80%;
+    width: 100%;
     max-width: 1150px;
     height: fit-content;
-    padding: 10px;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -12,7 +11,6 @@
     box-shadow: 1px 1px 10px #0002;
     container-name: section;
     container-type: inline-size;
-
 }
 
 .container > div {
@@ -21,6 +19,7 @@
     grid-template-columns: repeat(5, 1fr);
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 10px;
 }
 
 /* ---------- Hidden Scroll Bar */

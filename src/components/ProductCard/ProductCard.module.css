@@ -8,13 +8,14 @@
     justify-self: center;
     background: #fff;
     padding: 5px 10px 30px 10px;
-    min-width: 180px;
+    min-width: 150px;
     max-width: 200px;
     margin-top: 10px;
 }
 
 .container a {
     text-decoration: none;
+    width: 90%;
 }
 
 .imgContent{
@@ -30,7 +31,7 @@
 .container > a > h3 {
     font-weight: lighter;
     color: #404040;
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 .previousPrice{
@@ -104,7 +105,6 @@
         @media (max-width: 650px) {
             .container {
                 max-width: none;
-                min-width: none;
                 width: 100%;
             }
             .container a {

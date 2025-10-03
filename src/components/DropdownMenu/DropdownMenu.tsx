@@ -42,7 +42,7 @@ function DropdownMenu({onClickDropdownMenu} :DropdownMenuType) {
                 </ul>
                 <ul>
                     {/* <li>{SummarySvg}<Link to={"/"} onClick={onClickDropdownMenu} >Resumen</Link></li> */}
-                    <li>{OnSaleSvg}<Link to={"/"} onClick={onClickDropdownMenu} >Vender</Link></li>
+                    <li>{OnSaleSvg}<Link to={"/publicarProducto"} onClick={onClickDropdownMenu} >Vender</Link></li>
                 </ul>
                 {/* <ul>
                     <li>{DownloadSvg}<Link to={"/"} onClick={onClickDropdownMenu} >¡Comprá y vendé con la app!</Link></li>

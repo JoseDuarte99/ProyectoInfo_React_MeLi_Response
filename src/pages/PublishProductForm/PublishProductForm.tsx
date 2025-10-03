@@ -269,6 +269,11 @@ function PublishProductForm() {
                 type="submit">
                     Publicar producto
             </button>
+            <button 
+                className={style.returnButton}
+                onClick={() => navigate("/publicarProducto")}>
+                    Cancelar
+            </button>
             </form>
         </div>
     )

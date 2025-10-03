@@ -1,58 +1,30 @@
 .home {
     background: #ebebeb;
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    grid-template-areas: 
-    "header header header"
-    "container container container"
-    "footer footer footer";
+    padding: 60px 30px 60px 30px;
 }
 
 .homeAside {
     background: #ebebeb;
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    grid-template-areas: 
-    "header header header"
-    "aside container container"
-    "footer footer footer";
-}
-
-header {
-    grid-area: header;
-}
-
-/* .products {
-    grid-area: products;
-    position: relative;
-} */
-
-.aside {
-    grid-area: aside;
-    padding: 80px 0 0 5vw;
-}
-.notAside{
-    display: none;
-}
-
-footer {
-    grid-area: footer;
+    display: flex;
+    padding: 60px 30px 60px 30px;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .container {
-    grid-area: container;
-    padding: 5rem 0;
     display: flex;
     flex-direction: column;
     gap: 5rem;
     align-items: center;
+    justify-self: center;
     position: relative;
+    width: 100%;
 }
 
 .buttonFilter {
     position: absolute;
     right: 10%;
-    top: 150px;
+    top: 130px;
     color: #525252;
     cursor: pointer;
     border-radius: 5px;
@@ -74,5 +46,22 @@ footer {
     @media (min-width: 1475px) {
         .buttonFilter {
             right: 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .home,.homeAside {
+            padding: 60px 10px 60px 10px;
+        }
+        
+    }
+
+    @media (max-width: 450px) {
+        .homeAside {  
+            padding: 30px 10px 60px 10px;
+            flex-direction: column;
+        }
+        .aside {
+            width: 100%;
         }
     }

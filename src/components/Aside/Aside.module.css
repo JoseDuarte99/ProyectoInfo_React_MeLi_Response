@@ -2,6 +2,7 @@
     font-family: "Proxima Nova",Arial,sans-serif,sans-serif; 
     background: #fff;
     height: fit-content;
+    width: 25vw;
     min-width: 100px;
     max-width: 180px;
     padding: 15px;
@@ -169,4 +170,45 @@
         .allowed {
             align-self: center;
         }
+    }
+
+    @media (max-width: 450px) {
+        .aside {
+            max-width: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .aside h4 {
+            width: 50%;
+            align-self: center;
+            margin: 5px 0 0 0;
+        }
+        .aside p {
+            padding-left: 10px;
+        }
+        .aside > div {
+            display: flex;
+            justify-content:space-between ;
+            gap: 5px;
+            padding: 0 5px;
+        }
+        .aside > div > span > ul {
+            margin: 0;
+        }
+        .priceMinMax {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .priceMinMax > input {
+            width: 20vw;
+            
+        }
+        .resetFilters {
+            align-self: center;
+            margin: 0 0 5px 0;
+        }
+        
     }
