@@ -8,8 +8,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 
 // Import Components
 import CartContext from "../../context/CartContext";
-import LoadingProduct from "../../components/loadingProduct";
-import ProductNotFound from "../../components/productNoFound";
+import { LoadingProduct, ProductNotFound } from "../../components/FetchingData/FetchingData";
 
 // Import Types
 import type { ProductCartType } from "../../types/ProductCartType";

@@ -5,8 +5,8 @@ import style from "./Home.module.css"
 import Aside from "../../components/Aside/Aside";
 import SectionCard from "../../components/SectionCard/SectionCard"
 import ProductCard from "../../components/ProductCard/ProductCard";
-import LoadingProduct from "../../components/loadingProduct";
-import ErrorLoadingProduct from "../../components/errorLoadingProduct";
+import { LoadingProduct, ErrorLoadingProduct } from "../../components/FetchingData/FetchingData";
+
 
 // Import Data
 import { productService } from "../../data/services";

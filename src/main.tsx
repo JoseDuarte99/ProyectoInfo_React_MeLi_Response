@@ -19,6 +19,8 @@ import NotFound404 from './pages/NotFound404/NotFound404.tsx';
 import PublishProduct from './pages/PublishProduct/PublishProduct.tsx';
 import PublishProductLayout from './layout/PublishProductLayout.tsx';
 import PublishProductForm from './pages/PublishProductForm/PublishProductForm.tsx';
+import Help from './pages/Help/Help.tsx';
+import OnlyHeaderLayout from './layout/OnlyHeaderLayout.tsx';
 
 
 const queryClient = new QueryClient()
@@ -47,6 +49,11 @@ createRoot(document.getElementById('root')!).render(
                 <Route index element={<PublishProduct/>} />
                 <Route path="form/:category" element={<PublishProductForm />} />
               </Route>
+            </Route>
+
+            {/* Simple Header------------- */}
+            <Route element={<OnlyHeaderLayout />}>
+              <Route path='/ayuda' element={<Help />}/>
             </Route>
 
           </Routes>

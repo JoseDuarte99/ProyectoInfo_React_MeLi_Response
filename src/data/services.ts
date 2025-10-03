@@ -1,5 +1,5 @@
 
-import type { PostProductProps, ProductDB } from '../types/Typing';
+import type { PostProductProps, ProductDB } from '../types/OthersTypes';
 import { productsDB, categories } from './db';
 
 type Filters = {priceRange: {max: number, min: number}, primeOnly?: boolean, colors: string, brands:Array<string>, rating:number ,inStock?:boolean, }
@@ -13,7 +13,7 @@ export const productService = {
   // GET all products with optional filters and sorting
   // async getAllProducts(options?: Options) {
   async getAllProducts() {
-    await delay(200);
+    await delay(1000);
     const products = [...productsDB];
 
     // Apply filters and sorting
@@ -42,7 +42,7 @@ export const productService = {
 
   // GET product by ID
   async getProductById(id : string) {
-    await delay(1000);
+    await delay(500);
     
     const productLocal = localStorage.getItem("productLocal");
     const productStorage : ProductDB[] = productLocal ? JSON.parse(productLocal) : [];

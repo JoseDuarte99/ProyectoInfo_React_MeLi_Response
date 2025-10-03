@@ -1,0 +1,72 @@
+.help {
+    height: 50vh;
+    width: fit-content;
+    background-color: #f5f5f5; 
+    color: #333;               
+    text-align: center;
+    padding: 20px;
+    margin: 50px 10px;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+    font-family: "Proxima Nova", Arial, sans-serif, sans-serif;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #0003;
+}
+
+.help span{
+    font-weight: bold;
+    font-size: 1.2em;
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.help p {
+    margin: 5px 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.help p svg{
+    height: 15px;
+    padding-left: 5px;
+}
+
+.help a {
+    color: #3483fa; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.help a:hover {
+    text-decoration: underline;
+}
+
+.help span:last-child {
+    font-size: 0.9em;
+}
+
+
+/* ------------------ PHONE SCREEN VIEW -------------------------*/
+    @media (max-width: 768px) {
+        .help {
+            box-shadow: 5px 5px 20px #0005;
+            padding: 20px;
+        }
+        
+        .help span{
+            font-weight: bold;
+            font-size: 1.2em;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+        }
+        .help span p{
+            margin: 0;
+        }
+
+    }

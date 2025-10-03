@@ -100,19 +100,19 @@ function Navbar() {
                     <li onClick={() => {addFilterProducts(FilterType.Promotion, "Cupón"); setFilteringState(true)}}> <Link to="/">Cupones</Link> </li>
                     <li onClick={() => {addFilterProducts(FilterType.Category, "Supermercado"); setFilteringState(true)}}> <Link to="/">Supermercado</Link> </li>
                     <li onClick={() => {addFilterProducts(FilterType.Category, "Moda"); setFilteringState(true)}}> <Link to="/">Moda</Link> </li>
-                    <li onClick={() => {addFilterProducts(FilterType.Promotion, "Mercado Play"); setFilteringState(true)}}
+                    <li
                         className={style.buttonMercadoPlay}>
                         <span>GRATIS</span>
-                        <Link to="/">Mercado Play</Link> 
+                        <Link to="/*">Mercado Play</Link> 
                     </li>
                     <li> <Link to="/publicarProducto">Vender</Link> </li>
-                    <li> <Link to="/">Ayuda</Link> </li>
+                    <li> <Link to="/ayuda">Ayuda</Link> </li>
                 </ul>
                 <div className={style.login}>
                     <ul>
-                        <li> <Link to="/">Creá tu cuenta</Link> </li>
-                        <li> <Link to="/">Ingresá</Link> </li> 
-                        <li> <Link to="/">Mis compras</Link> </li>
+                        <li> <Link to="/*">Creá tu cuenta</Link> </li>
+                        <li> <Link to="/*">Ingresá</Link> </li> 
+                        <li> <Link to="/*">Mis compras</Link> </li>
                     </ul>
                     <CartIcon quantity={quantityProductCart.size} className={style.cart}/> 
                 </div>  

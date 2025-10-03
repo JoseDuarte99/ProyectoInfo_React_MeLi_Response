@@ -35,7 +35,7 @@ function SimpleHeader() {
                     onClick={() => {setFilteringState(false); resetFilterProducts(FilterType.Reset, "")}}> 
                     <img src={imgLogo} alt="Logo"/>
                 </Link>
-                <Link to="/"
+                <Link to="/ayuda"
                     className={style.help} >
                     <p>Ayuda</p>
                 </Link>

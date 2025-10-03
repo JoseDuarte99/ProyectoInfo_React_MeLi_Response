@@ -1,0 +1,27 @@
+.fetchingData {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    background: #fff;   
+    margin: 10vh 30px;
+    padding: 10vw;
+    border-radius: 50%;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #202020;
+}
+
+.fetchingData > span {
+    align-self: center;
+}
+
+.fetchingData > h4 {
+    align-self: center;
+    font-size: 0.8em;
+}
+
+.fetchingData > a {
+    text-decoration: none;
+    color: #404040;
+    align-self: center;
+    font-size: 0.7em;
+}

@@ -69,3 +69,34 @@ export function NotFound404Svg(){
   )
 };
 
+
+export function LoadingProducts(){
+
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="251" height="154" viewBox="0 0 251 154">
+      <g fill="none" fillRule="evenodd">
+        
+        <path fill="#CCC" d="M18 151h233v2H18v-2zm-18 0h13v2H0v-2z"/>
+        <path fill="#DFDFDF" d="M152 133v8.165h-50V133H28v8.165c0 5.52 3.405 11.827 13.647 11.835l168.906-.291C228.179 152.723 226.377 133 226 133h-74z"/>
+        <path fill="#F7D032" d="M153.303 133.42l-24.278.011 24.278.018z"/>
+        <path fill="#FFF" d="M58.513 132.71h139.604V34.572l-139.604.397z"/>
+        <path fill="#BBB" d="M30 147c.735 2.575 5.553 6.276 13.283 6.276L211 153c6.737 0 12.34-3.372 13-6H30z"/>
+        <path stroke="#CCC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M198 132H59"/>
+        <path stroke="#999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M225 134v7.285c0 4.325-4.247 10.715-13.393 10.715H46.489"/>
+        <path stroke="#CCC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M45 97V28a6 6 0 0 1 6-6h155a6 6 0 0 1 6 6v99"/>
+        <path stroke="#CCC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M198 132.492V37.367c0-1.599-1.397-2.367-3-2.367l-112.35-.11-13.717.094-8.016.016c-1.041 0-1.6.524-1.603 1.567"/>
+        
+        
+        <circle cx="128" cy="85" r="20" stroke="#F7D032" strokeWidth="4" fill="none" strokeLinecap="round">
+          <animateTransform 
+            attributeName="transform" 
+            type="rotate" 
+            from="0 128 85" 
+            to="360 128 85" 
+            dur="1s" 
+            repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </svg>
+  )
+};

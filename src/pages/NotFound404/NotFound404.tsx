@@ -14,8 +14,8 @@ function NotFound404(){
     return (
         <div className={style.notFound404}>
             <span> {NotFound404Svg()} </span>
-            <h4 className="text-xl font-semibold mt-[2rem] mb-[2rem]">Parece que esta página no existe</h4>
-            <Link to="/" className="font-light text-neutral-700"> Ir a la página principal</Link>
+            <h4>Parece que esta página no existe</h4>
+            <Link to="/"> Ir a la página principal</Link>
         </div>
     )
 };

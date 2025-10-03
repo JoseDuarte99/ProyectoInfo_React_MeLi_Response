@@ -13,7 +13,7 @@ import { productService } from "../../data/services";
 
 // Import Components
 // import LoadingProduct from "../loadingProduct";
-import ErrorLoadingProduct from "../errorLoadingProduct";
+import { ErrorLoadingProduct } from "../FetchingData/FetchingData";
 
 
 

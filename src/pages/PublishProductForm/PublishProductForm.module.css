@@ -44,7 +44,7 @@
 
 .publishProductForm textarea {
     width: none;
-    height: none;
+    height: 20vh;
 }
 /* Text Input ----------------------------------------- */
 .textInput {
